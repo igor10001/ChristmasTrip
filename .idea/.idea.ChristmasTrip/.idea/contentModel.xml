@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\whoiam\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\whoiam\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ChristmasTrip.-457248205.00" t="ExcludeRecursive" />
+    <e p="D:\Christmas trip\ChristmasTrip" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="ANGRY MESH" t="Include">
+          <e p="Nature Pack - Common" t="Include">
+            <e p="Readme.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AGGlobalSettings.cs" t="Include" />
+              <e p="AGGlobalSnow.cs" t="Include" />
+              <e p="AGGlobalSnowGrass.cs" t="Include" />
+              <e p="AGGlobalSnowHeight.cs" t="Include" />
+              <e p="AGGlobalSnowProps.cs" t="Include" />
+              <e p="AGGlobalSnowTree.cs" t="Include" />
+              <e p="AGGlobalWind.cs" t="Include" />
+              <e p="CameraFly.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Unity Standard" t="Include">
+                <e p="Detail Props Snow.shader" t="Include" />
+                <e p="Detail Props.shader" t="Include" />
+                <e p="Grass Snow.shader" t="Include" />
+                <e p="Grass.shader" t="Include" />
+                <e p="Props Snow.shader" t="Include" />
+                <e p="Props.shader" t="Include" />
+                <e p="Tree Bark Snow.shader" t="Include" />
+                <e p="Tree Bark.shader" t="Include" />
+                <e p="Tree Cross Snow.shader" t="Include" />
+                <e p="Tree Cross.shader" t="Include" />
+                <e p="Tree Leaf Snow.shader" t="Include" />
+                <e p="Tree Leaf.shader" t="Include" />
+              </e>
+              <e p="Unity URP" t="Include">
+                <e p="Detail Props Snow.shader" t="Include" />
+                <e p="Detail Props.shader" t="Include" />
+                <e p="Grass Snow.shader" t="Include" />
+                <e p="Grass.shader" t="Include" />
+                <e p="Props Snow.shader" t="Include" />
+                <e p="Props.shader" t="Include" />
+                <e p="Tree Bark Snow.shader" t="Include" />
+                <e p="Tree Bark.shader" t="Include" />
+                <e p="Tree Cross Snow.shader" t="Include" />
+                <e p="Tree Cross.shader" t="Include" />
+                <e p="Tree Leaf Snow.shader" t="Include" />
+                <e p="Tree Leaf.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Nature Pack - Winter Environment" t="Include">
+            <e p="SRP" t="Include">
+              <e p="Readme.txt" t="Include" />
+            </e>
+            <e p="Third-Party Support" t="Include">
+              <e p="Readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Input" t="Include">
+          <e p="PlayerInput.cs" t="Include" />
+        </e>
+        <e p="RetroTVFX-2.0.0" t="Include">
+          <e p="Editor" t="Include">
+            <e p="CRTEffectInspector.cs" t="Include" />
+            <e p="RetroTVFX.Editor.asmdef" t="Include" />
+          </e>
+          <e p="package.json" t="Include" />
+          <e p="Runtime" t="Include">
+            <e p="Core" t="Include">
+              <e p="Resources" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="NTSCEffect.shader" t="Include" />
+                  <e p="RetroTV.cginc" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="CRTEffect.cs" t="Include" />
+                <e p="Input" t="Include">
+                  <e p="LoResStandaloneInputModule.cs" t="Include" />
+                </e>
+                <e p="Utils" t="Include">
+                  <e p="ColorSpaceUtils.cs" t="Include" />
+                  <e p="FilterTaps.cs" t="Include" />
+                  <e p="GraphicsUtils.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Extras" t="Include">
+              <e p="Resources" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="DitherShader.shader" t="Include" />
+                  <e p="PS1ObjectShader.shader" t="Include" />
+                  <e p="ScreenFadeShader.shader" t="Include" />
+                  <e p="UIOverlay.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Script" t="Include">
+                <e p="AudioHumEffect.cs" t="Include" />
+                <e p="BlitRenderTexture.cs" t="Include" />
+                <e p="FadeEffect.cs" t="Include" />
+                <e p="LoResEffect.cs" t="Include" />
+                <e p="OverrideAspectRatio.cs" t="Include" />
+              </e>
+            </e>
+            <e p="RetroTVFX.Runtime.asmdef" t="Include" />
+          </e>
+          <e p="Unity_PostEffect-master" t="Include">
+            <e p="Unity_PostEffect-master" t="Include">
+              <e p="Assets" t="Include">
+                <e p="PostEffects" t="Include">
+                  <e p="BadTV" t="Include">
+                    <e p="BadTVEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="BarrelBlur" t="Include">
+                    <e p="BarrelBlurEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Bleach" t="Include">
+                    <e p="BleachEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Bloom" t="Include">
+                    <e p="BloomEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="BrightContrast" t="Include">
+                    <e p="BrightContrastEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="DotMatrix" t="Include">
+                    <e p="DotMatrixEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Emboss" t="Include">
+                    <e p="EmbossEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="HarfTone" t="Include">
+                    <e p="HarfToneEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="HueSaturation" t="Include">
+                    <e p="HueSaturationEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="InstaColor" t="Include">
+                    <e p="InstaColorEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Kaleidoscope" t="Include">
+                    <e p="KaleidoscopeEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Lines" t="Include">
+                    <e p="LinesEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Mirror" t="Include">
+                    <e p="MirrorEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Pixcelate" t="Include">
+                    <e p="PixcelateEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="PolarPixelate" t="Include">
+                    <e p="PolarPixelateEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Posterize" t="Include">
+                    <e p="PosterizeEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="RGBShift" t="Include">
+                    <e p="RGBShiftEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Ripple" t="Include">
+                    <e p="RippleEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Scanlines" t="Include">
+                    <e p="ScanlinesEffect.cs" t="Include" />
+                    <e p="Shader.shader" t="Include" />
+                  </e>
+                  <e p="Slices" t="Include">
+                    <e p="Shader.shader" t="Include" />
+                    <e p="SlicesEffect.cs" t="Include" />
+                  </e>
+                  <e p="TiltShift" t="Include">
+                    <e p="Shader.shader" t="Include" />
+                    <e p="TiltShiftEffect.cs" t="Include" />
+                  </e>
+                  <e p="TraceEdges" t="Include">
+                    <e p="Shader.shader" t="Include" />
+                    <e p="TraceEdgesEffect.cs" t="Include" />
+                  </e>
+                  <e p="Vignette" t="Include">
+                    <e p="Shader.shader" t="Include" />
+                    <e p="VignetteEffect.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="WebCam" t="Include">
+                  <e p="WebCamController.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Packages" t="Include">
+                <e p="manifest.json" t="Include" />
+              </e>
+              <e p="ProjectSettings" t="Include">
+                <e p="ProjectVersion.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Cinemachine" t="Include">
+            <e p="CinemachinePovExtension.cs" t="Include" />
+          </e>
+          <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerInputManager.cs" t="Include" />
+        </e>
+        <e p="SharedAssets" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="HLSL" t="Include">
+              <e p="CustomFunctionNodes.hlsl" t="Include" />
+              <e p="CustomLighting.hlsl" t="Include" />
+              <e p="StencilOnly.shader" t="Include" />
+              <e p="Water.hlsl" t="Include" />
+            </e>
+          </e>
+          <e p="TextMeshPro" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans-OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking_Following_Characters.txt" t="Include" />
+              <e p="LineBreaking_Leading_Characters.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF-Mobile-Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile-Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile-SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Overlay.shader" t="Include" />
+              <e p="TMP_SDF-SSD.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Mobile.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne.json" t="Include" />
+              <e p="EmojiOne_Attribution.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="ChristmasTrip.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive">
+        <e p="com.unity.render-pipelines.universal-config" t="Include">
+          <e p="package.json" t="Include" />
+          <e p="Runtime" t="Include">
+            <e p="ShaderConfig.cs" t="Include" />
+            <e p="ShaderConfig.cs.hlsl" t="Include" />
+            <e p="Unity.RenderPipelines.Universal.Config.Runtime.asmdef" t="Include" />
+          </e>
+          <e p="Tests" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ConfigurationTest.cs" t="Include" />
+              <e p="Unity.RenderPipelines.Universal.Config.Editor.Tests.asmdef" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="RetroTVFX.Editor.csproj" t="IncludeRecursive" />
+      <e p="RetroTVFX.Runtime.csproj" t="IncludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="Unity.RenderPipelines.Universal.Config.Editor.Tests.csproj" t="IncludeRecursive" />
+      <e p="Unity.RenderPipelines.Universal.Config.Runtime.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>

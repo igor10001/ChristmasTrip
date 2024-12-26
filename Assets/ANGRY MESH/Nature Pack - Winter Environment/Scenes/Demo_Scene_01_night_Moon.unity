@@ -15,15 +15,15 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.64705884, g: 0.74509805, b: 0.8235295, a: 1}
+  m_FogColor: {r: 0.12362406, g: 0.2565606, b: 0.3660378, a: 1}
   m_FogMode: 1
-  m_FogDensity: 0.001
-  m_LinearFogStart: 10
+  m_FogDensity: 0.1
+  m_LinearFogStart: 28.51
   m_LinearFogEnd: 100
   m_AmbientSkyColor: {r: 0.2352941, g: 0.2352941, b: 0.2352941, a: 0.96}
   m_AmbientEquatorColor: {r: 0.8621177, g: 0.96, b: 0.96, a: 0.96}
   m_AmbientGroundColor: {r: 0.6653793, g: 0.96, b: 0.33176467, a: 0.96}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.92
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2869c66e822baa941bb52b0e6ec3dfdf, type: 2}
@@ -17801,6 +17801,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf8ce3f2ebdff0c4d90f1daba038716c, type: 3}
+--- !u!1 &802271016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802271018}
+  - component: {fileID: 802271017}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &802271017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802271016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 6ffa1bbec8036394383994d90731757f, type: 2}
+--- !u!4 &802271018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802271016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 308.7895, y: 49.351795, z: 195.59828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &802614820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4356942016288112, guid: 16bb3a2c4257a4c419755e4b20faa4d4, type: 3}
@@ -18233,8 +18282,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.7006083, b: 0.4705882, a: 1}
-  m_Intensity: 1.1
+  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18277,8 +18326,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 20000
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -41210,16 +41259,24 @@ PrefabInstance:
       value: -28.762001
       objectReference: {fileID: 0}
     - target: {fileID: 114062693504424816, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
+      propertyPath: WindTreeSpeed
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114062693504424816, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
+      propertyPath: WindGrassSpeed
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114062693504424816, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
       propertyPath: EnableGlobalWind
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114062693504424816, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
       propertyPath: WindTreeAmplitude
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114062693504424816, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
       propertyPath: WindGrassAmplitude
-      value: 0.2
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 114079997092871362, guid: 9e914ef92b06e8740854c2f6b0ab2a1b, type: 3}
       propertyPath: SnowGrassIntensity
@@ -42408,6 +42465,7 @@ GameObject:
   - component: {fileID: 2105745089}
   - component: {fileID: 2105745090}
   - component: {fileID: 2105745095}
+  - component: {fileID: 2105745096}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -42599,6 +42657,22 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2105745096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105745088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e2a4358e02d4f30bac5028d43ad851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  thickDistort: 3
+  fineDistort: 1
+  material: {fileID: 2100000, guid: 0b2b1aef91c2345ab8d2fecf276fba3c, type: 2}
 --- !u!1001 &2107450788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43585,3 +43659,4 @@ SceneRoots:
   - {fileID: 1545997458}
   - {fileID: 2026385101}
   - {fileID: 713879729}
+  - {fileID: 802271018}
