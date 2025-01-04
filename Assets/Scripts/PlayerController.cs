@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
-namespace DefaultNamespace
-{
+
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController: MonoBehaviour
     {
-        
+
         private CharacterController controller;
         private Vector3 playerVelocity;
         private bool groundedPlayer;
@@ -27,6 +25,9 @@ namespace DefaultNamespace
             
 
         }
+        
+        
+        
 
         void Update()
         {
@@ -36,7 +37,7 @@ namespace DefaultNamespace
                 playerVelocity.y = 0f;
             }
 
-
+           
             Vector2 movement = _playerInputManager.GetPlayerMovement();
             Vector3 move = new Vector3(movement.x, 0, movement.y);
             move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
@@ -57,4 +58,3 @@ namespace DefaultNamespace
             controller.Move(playerVelocity * Time.deltaTime);
         }
     }
-}

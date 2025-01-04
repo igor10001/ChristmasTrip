@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ANGRY MESH/Nature Pack - Winter Environment/Scenes/Demo_Scene_01_Sun.unity
-    guid: 7dff762af1ae1a445a4414b6fa0a67d1
-  - enabled: 1
     path: Assets/ANGRY MESH/Nature Pack - Winter Environment/Scenes/Demo_Scene_01_night_Moon.unity
     guid: 8455af2309fa4ba40878e5b090d1e30a
+  - enabled: 1
+    path: Assets/ANGRY MESH/Nature Pack - Winter Environment/Scenes/Demo_Scene_01_Sun.unity
+    guid: 7dff762af1ae1a445a4414b6fa0a67d1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 290a6e6411d135049940bec2237b8938, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

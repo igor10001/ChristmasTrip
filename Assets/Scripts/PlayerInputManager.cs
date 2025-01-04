@@ -7,6 +7,7 @@ using UnityEngine;
 {
     private GamePlayerInput _playerInput;
 
+
     private void Awake()
     {
         _playerInput = new GamePlayerInput();
