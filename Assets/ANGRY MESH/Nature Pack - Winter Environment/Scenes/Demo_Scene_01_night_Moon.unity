@@ -32477,6 +32477,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16bb3a2c4257a4c419755e4b20faa4d4, type: 3}
+--- !u!1 &1550618012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4777256058668478992, guid: a3d9f28f802f5e143bed8303693eed47, type: 3}
+  m_PrefabInstance: {fileID: 1703279221305415151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1551275484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4262241586410684, guid: b6ac9f436ed0c0e4095a2336f3160e41, type: 3}
@@ -42896,7 +42901,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1500
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: 1
   m_CullingMask:
@@ -42948,7 +42953,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -43746,7 +43751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4777256060276791827}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.30000815, y: 0.66000116, z: -0.30500287}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_ConstrainProportionsScale: 0
@@ -43823,6 +43828,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6509013031800858481, guid: a3d9f28f802f5e143bed8303693eed47, type: 3}
+      propertyPath: currentState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509013031800858481, guid: a3d9f28f802f5e143bed8303693eed47, type: 3}
+      propertyPath: rotationReference
+      value: 
+      objectReference: {fileID: 597488747}
     - target: {fileID: 6509013031800858481, guid: a3d9f28f802f5e143bed8303693eed47, type: 3}
       propertyPath: _playerInputManager
       value: 
@@ -44019,9 +44032,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 209709899490909474, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 209709899490909474, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 209709899490909474, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 437454035517142177, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299833954007963353, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2606324266867756027, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: _vehicleInteractionRefs.playerTransform
@@ -44031,6 +44060,18 @@ PrefabInstance:
       propertyPath: _vehicleInteractionRefs.playerController
       value: 
       objectReference: {fileID: 1964678974}
+    - target: {fileID: 2606324266867756027, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: _vehicleInteractionRefs.camera.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606324266867756027, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: '_vehicleInteractionRefs.camera.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1550618012}
+    - target: {fileID: 2606324266867756027, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
+      propertyPath: '_vehicleInteractionRefs.camera.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4777256060276791827}
     - target: {fileID: 2955470674585777889, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_Name
       value: baha
@@ -44049,19 +44090,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8291735
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.55899143
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44069,14 +44110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -67.972
       objectReference: {fileID: 0}
     - target: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1299833954007963353, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6712101665536260856, guid: b75dd39cff8a0b948bd93ba6586290b2, type: 3}
       insertIndex: 0
@@ -44095,12 +44137,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3721de6857420f8bf0f35cd4284f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clampAngleY: 80
+  currentState: 0
+  clampAngleY: 40
   clampAngleX: 90
-  xClamp: 0
+  xClamp: 1
   horizontalSpeed: 10
   verticalSpeed: 10
   _playerInputManager: {fileID: 626375231}
+  rotationReference: {fileID: 597488747}
 --- !u!114 &7673015110215447797
 MonoBehaviour:
   m_ObjectHideFlags: 3

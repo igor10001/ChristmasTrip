@@ -56,6 +56,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   _baseProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+--- !u!114 &-787793717284226666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8d6ac66772e4185bd13920192d54b3, type: 3}
+  m_Name: VHSPro
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +99,8 @@ MonoBehaviour:
   - {fileID: 7833122117494664109}
   - {fileID: 3573653513797426673}
   - {fileID: -3751262535411419207}
-  m_RendererFeatureMap: a163f70a5ce289f0ad6b866f10d7b46cf1dd38d0ef2a9831b937925d99d6f0cb
+  - {fileID: -787793717284226666}
+  m_RendererFeatureMap: a163f70a5ce289f0ad6b866f10d7b46cf1dd38d0ef2a9831b937925d99d6f0cb9639fdbcc93111f5
   m_UseNativeRenderPass: 1
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
