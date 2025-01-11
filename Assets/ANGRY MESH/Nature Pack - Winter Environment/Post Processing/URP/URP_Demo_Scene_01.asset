@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63c99b3ed38a41f39e4d2bc6c00dfba, type: 3}
   m_Name: VHSPro
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   g_pixel: 1
   g_color: 1
   g_palette: 1
@@ -302,7 +302,7 @@ MonoBehaviour:
   g_extra: 1
   g_bypass: 1
   pixelOn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   screenResPresetId:
     m_OverrideState: 1

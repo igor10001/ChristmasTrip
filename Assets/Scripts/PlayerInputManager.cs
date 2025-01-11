@@ -19,7 +19,7 @@ using UnityEngine;
     {
         _playerInput.Enable();
     }
-
+    
     private void OnDisable()
     {
         _playerInput.Disable();

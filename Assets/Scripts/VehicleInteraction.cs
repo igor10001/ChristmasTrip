@@ -23,7 +23,7 @@ public class VehicleInteraction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             EnterVehicle();
-        }
+        }    
     }
 
     private void EnterVehicle()
