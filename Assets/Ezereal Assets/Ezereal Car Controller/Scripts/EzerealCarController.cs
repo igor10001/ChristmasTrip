@@ -35,7 +35,7 @@ namespace Ezereal
         [SerializeField] TMP_Text currentSpeedTMP_UI;
         [SerializeField] TMP_Text currentSpeedTMP_Dashboard;
         [SerializeField] Slider accelerationSlider;
-
+        
         [Header("Settings")]
         public bool isStarted = true;
 
@@ -210,26 +210,26 @@ namespace Ezereal
 
                 if (currentGear == AutomaticGears.Reverse)
                 {
-                    if (currentAccelerationValue > 0f && currentSpeed > -maxReverseSpeed)
+                    if (currentBrakeValue > 0f && currentSpeed > -maxReverseSpeed)
                     {
-                        currentAccelerationValue = 1; //Invert Acceleration value
+                        //currentAccelerationValue = 1; //Invert Acceleration value
 
                         if (driveType == DriveTypes.RWD)
                         {
-                            rearLeftWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
-                            rearRightWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
+                            rearLeftWheelCollider.motorTorque = -currentBrakeValue * horsePower;
+                            rearRightWheelCollider.motorTorque = -currentBrakeValue * horsePower;
                         }
                         else if (driveType == DriveTypes.FWD)
                         {
-                            frontLeftWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
-                            frontRightWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
+                            frontLeftWheelCollider.motorTorque = -currentBrakeValue * horsePower;
+                            frontRightWheelCollider.motorTorque = -currentBrakeValue * horsePower;
                         }
                         else if (driveType == DriveTypes.AWD)
                         {
-                            frontLeftWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
-                            frontRightWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
-                            rearLeftWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
-                            rearRightWheelCollider.motorTorque = -currentAccelerationValue * horsePower;
+                            frontLeftWheelCollider.motorTorque = -currentBrakeValue * horsePower;
+                            frontRightWheelCollider.motorTorque = -currentBrakeValue * horsePower;
+                            rearLeftWheelCollider.motorTorque = -currentBrakeValue * horsePower;
+                            rearRightWheelCollider.motorTorque = -currentBrakeValue * horsePower;
                         }
 
                     }
@@ -266,16 +266,33 @@ namespace Ezereal
 
         void Braking()
         {
-            if (currentBrakeValue > 0f)
+            if (currentGear == AutomaticGears.Drive)
             {
-                frontLeftWheelCollider.brakeTorque = currentBrakeValue * brakePower;
-                frontRightWheelCollider.brakeTorque = currentBrakeValue * brakePower;
+                if (currentBrakeValue > 0f)
+                {
+                    frontLeftWheelCollider.brakeTorque = currentBrakeValue * brakePower;
+                    frontRightWheelCollider.brakeTorque = currentBrakeValue * brakePower;
+                }
+                else
+                {
+                    frontLeftWheelCollider.brakeTorque = 0;
+                    frontRightWheelCollider.brakeTorque = 0;
+                }
             }
-            else
+            else if(currentGear == AutomaticGears.Reverse)
             {
-                frontLeftWheelCollider.brakeTorque = 0;
-                frontRightWheelCollider.brakeTorque = 0;
+                if ( currentAccelerationValue > 0f)
+                {
+                    frontLeftWheelCollider.brakeTorque = currentAccelerationValue * brakePower;
+                    frontRightWheelCollider.brakeTorque = currentAccelerationValue * brakePower;
+                }
+                else
+                {
+                    frontLeftWheelCollider.brakeTorque = 0;
+                    frontRightWheelCollider.brakeTorque = 0;
+                }
             }
+          
         }
 
         void OnHandbrake(InputValue handbrakeValue)
@@ -412,12 +429,34 @@ namespace Ezereal
             }
         }
 
-
+        private void UpdateGearForStationaryState()
+        {
+          
+                if (currentBrakeValue == 1 && currentGear != AutomaticGears.Reverse)
+                {
+                    currentGear = AutomaticGears.Reverse;
+                    UpdateGearText("R");
+                }
+                else if (currentBrakeValue < 1 && currentGear != AutomaticGears.Drive)
+                {
+                    currentGear = AutomaticGears.Drive;
+                    UpdateGearText("D");
+                }
+            
+        }
 
         private void FixedUpdate()
         {
+            Debug.Log("current braking balue ==== " + currentBrakeValue);
+            Debug.Log("current acceleration balue ==== " + currentAccelerationValue);
+            Debug.Log("stationary state ==== " + stationary );
+            
             Acceleration();
-
+            if (stationary)
+                {
+                    UpdateGearForStationaryState();
+                }
+          
             Braking();
 
             Handbraking();

@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 61ffd0700b9c32044b36ccf6e8e0be6e
+guid: b87e823b29296704d99488fdf30e41cd
 timeCreated: 1425440388
 licenseType: Store
 TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Resources/LineBreaking Following Characters.txt
+  uploadId: 655332

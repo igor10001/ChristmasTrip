@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: d88752703e2e4b9479ea044d1557bc17
+guid: 3777c400b450dac46a69b4ed9dd7fade
 timeCreated: 1425440388
 licenseType: Store
 TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Resources/LineBreaking Leading Characters.txt
+  uploadId: 655332

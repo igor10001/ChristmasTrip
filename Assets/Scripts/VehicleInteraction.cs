@@ -8,7 +8,9 @@ public struct VehicleInteractionRefs
    public Transform playerTransform;
    public Transform VehicleSeatTransform;
    public PlayerController playerController;
-   public GameObject[] camera;
+  // public GameObject[] camera;
+   public GameObject playerCamera;
+   public GameObject carCamera;
 
 
 }
@@ -32,8 +34,10 @@ public class VehicleInteraction : MonoBehaviour
         _vehicleInteractionRefs.playerController.enabled = false;
         _vehicleInteractionRefs.playerTransform.position = _vehicleInteractionRefs.VehicleSeatTransform.position;
         _vehicleInteractionRefs.playerTransform.rotation = _vehicleInteractionRefs.VehicleSeatTransform.rotation;
-        _vehicleInteractionRefs.camera[0].SetActive(false);
-        _vehicleInteractionRefs.camera[1].SetActive(true);
+       // _vehicleInteractionRefs.camera[0].SetActive(false);
+        _vehicleInteractionRefs.playerCamera.SetActive(false);
+        _vehicleInteractionRefs.carCamera.SetActive(true);
+        //_vehicleInteractionRefs.camera[1].SetActive(true);
 
     }
 }

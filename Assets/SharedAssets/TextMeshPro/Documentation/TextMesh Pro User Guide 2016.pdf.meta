@@ -1,7 +1,15 @@
 fileFormatVersion: 2
-guid: 3ba54ed17aa879c41b4d9ee70d603530
+guid: 9276963a5f1fc9c43a6886403a07a5e5
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Documentation/TextMesh Pro User Guide
+    2016.pdf
+  uploadId: 655332

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b9a9336b1fc6f94792e2eff3f5b8930
+guid: e6d4b33f630d15f4485942db663d8a09
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []
@@ -7,3 +7,10 @@ ShaderImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Shaders/TMP_SDF Overlay.shader
+  uploadId: 655332

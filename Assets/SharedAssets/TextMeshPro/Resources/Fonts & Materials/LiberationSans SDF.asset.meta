@@ -1,8 +1,16 @@
 fileFormatVersion: 2
-guid: c9e8c7e3f7693bb4296b8412baa0be3b
+guid: 3ac3784e14263264c929f48e6eb8a12e
 timeCreated: 1484171803
-licenseType: Pro
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Resources/Fonts & Materials/LiberationSans
+    SDF.asset
+  uploadId: 655332

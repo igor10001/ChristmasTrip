@@ -1,8 +1,16 @@
 fileFormatVersion: 2
-guid: 3522a3d3b15988c4a995a0f4c107459b
+guid: 8f7b8d96fc2322d4d8c567bb68887935
 timeCreated: 1432805430
 licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Resources/Style Sheets/Default Style
+    Sheet.asset
+  uploadId: 655332

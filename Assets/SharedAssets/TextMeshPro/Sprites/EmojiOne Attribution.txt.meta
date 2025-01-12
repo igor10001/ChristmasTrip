@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 831f9f78727e9ea4aafcadec5ac8786d
+guid: 01f6ccf5756a6d04b804667aaa9462ca
 TextScriptImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Sprites/EmojiOne Attribution.txt
+  uploadId: 655332

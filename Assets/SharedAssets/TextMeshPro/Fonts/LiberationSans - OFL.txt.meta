@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 8c0c391b1ed669e4db3152f9d5967a69
+guid: 52e6f2bd5f6a23c4da5cdbd3151e3ebd
 timeCreated: 1484171296
-licenseType: Pro
+licenseType: Store
 TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Fonts/LiberationSans - OFL.txt
+  uploadId: 655332

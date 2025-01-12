@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 0fb0cddbb199c0949a0fe07930a6ef30
+guid: 66d34ed4b0aa32044bb39e1416b0c047
 timeCreated: 1436653997
-licenseType: Pro
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269404
+  packageName: PolyStang CC
+  packageVersion: 1.1
+  assetPath: Assets/SharedAssets/TextMeshPro/Resources/TMP Settings.asset
+  uploadId: 655332
