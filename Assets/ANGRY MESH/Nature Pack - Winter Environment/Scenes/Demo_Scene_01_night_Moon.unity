@@ -12835,13 +12835,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: bmw
       objectReference: {fileID: 0}
+    - target: {fileID: 3905832067821289161, guid: bfde0371af1e7a94f86c00f90dd6a651, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6658359086200128212, guid: bfde0371af1e7a94f86c00f90dd6a651, type: 3}
       propertyPath: m_LocalPosition.x
       value: 426.9
       objectReference: {fileID: 0}
     - target: {fileID: 6658359086200128212, guid: bfde0371af1e7a94f86c00f90dd6a651, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.9
+      value: 50.63
       objectReference: {fileID: 0}
     - target: {fileID: 6658359086200128212, guid: bfde0371af1e7a94f86c00f90dd6a651, type: 3}
       propertyPath: m_LocalPosition.z
