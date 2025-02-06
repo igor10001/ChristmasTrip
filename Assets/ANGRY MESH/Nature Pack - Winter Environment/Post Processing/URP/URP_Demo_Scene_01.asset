@@ -252,7 +252,7 @@ MonoBehaviour:
     m_Value: 0.75
   intensity:
     m_OverrideState: 1
-    m_Value: 4.69
+    m_Value: 0.44
   scatter:
     m_OverrideState: 1
     m_Value: 0.8
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63c99b3ed38a41f39e4d2bc6c00dfba, type: 3}
   m_Name: VHSPro
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   g_pixel: 1
   g_color: 1
   g_palette: 1
@@ -305,8 +305,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   screenResPresetId:
-    m_OverrideState: 1
-    m_Value: 2
+    m_OverrideState: 0
+    m_Value: 13
   screenWidth:
     m_OverrideState: 0
     m_Value: 640
@@ -318,9 +318,9 @@ MonoBehaviour:
     m_Value: 1
   colorMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   colorSyncedOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   bitsR:
     m_OverrideState: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 2
   bitsSynced:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   bitsGray:
     m_OverrideState: 0
@@ -341,22 +341,22 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   ditherOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   ditherMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 3
   ditherAmount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   paletteOn:
     m_OverrideState: 0
     m_Value: 1
   paletteId:
-    m_OverrideState: 0
-    m_Value: 16
+    m_OverrideState: 1
+    m_Value: 10
   paletteDelta:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5
   paletteTex:
     m_OverrideState: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
     m_Value: 0
   bleedAmount:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.91
   noiseResGlobal:
     m_OverrideState: 1
     m_Value: 1
@@ -390,46 +390,46 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.016
   signalNoiseOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   signalNoiseAmount:
-    m_OverrideState: 0
-    m_Value: 0.3
+    m_OverrideState: 1
+    m_Value: 0.093
   signalNoisePower:
-    m_OverrideState: 0
-    m_Value: 0.83
+    m_OverrideState: 1
+    m_Value: 0.729
   lineNoiseOn:
     m_OverrideState: 0
     m_Value: 1
   lineNoiseAmount:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 5.76
   lineNoiseSpeed:
     m_OverrideState: 0
-    m_Value: 0.34
+    m_Value: 0.56
   tapeNoiseOn:
     m_OverrideState: 0
     m_Value: 1
   tapeNoiseTH:
     m_OverrideState: 0
-    m_Value: 1.5
+    m_Value: 1.184
   tapeNoiseAmount:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.69
   tapeNoiseSpeed:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.543
   scanLinesOn:
     m_OverrideState: 0
     m_Value: 1
   scanLineWidth:
-    m_OverrideState: 1
-    m_Value: 10.91
+    m_OverrideState: 0
+    m_Value: 20
   linesFloatOn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   linesFloatSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   stretchOn:
     m_OverrideState: 1
@@ -438,16 +438,16 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   jitterHAmount:
-    m_OverrideState: 1
-    m_Value: 0.5
+    m_OverrideState: 0
+    m_Value: 4.12
   jitterVOn:
     m_OverrideState: 0
     m_Value: 1
   jitterVAmount:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   jitterVSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   twitchHOn:
     m_OverrideState: 0
@@ -486,16 +486,16 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   feedbackThresh:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.1
   feedbackAmount:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2
   feedbackFade:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.82
   feedbackColor:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1, g: 0.5, b: 0, a: 1}
   feedbackDebugOn:
     m_OverrideState: 0
