@@ -48,7 +48,7 @@ namespace DefaultNamespace.Cinemachine
 
         private void AlignCamera()
         {
-            startingRotation.x = rotationReference.eulerAngles.y - clampAngleX;
+            startingRotation.x = rotationReference.eulerAngles.y - clampAngleX + 90;
         }
 
         protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
@@ -72,7 +72,8 @@ namespace DefaultNamespace.Cinemachine
                             startingRotation.x += deltaInputt.x *   verticalSpeed * Time.deltaTime;
                             startingRotation.y += deltaInputt.y * horizontalSpeed * Time.deltaTime;
                             startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngleY, clampAngleY);
-                            if(xClamp) startingRotation.x = Mathf.Clamp(startingRotation.x, -clampAngleX + rotationReference.eulerAngles.y - 90, clampAngleX + rotationReference.eulerAngles.y - 90);
+                            if(xClamp) startingRotation.x = Mathf.Clamp(startingRotation.x, -clampAngleX + rotationReference.eulerAngles.y ,
+                                clampAngleX + rotationReference.eulerAngles.y );
                             state.RawOrientation = Quaternion.Euler(-startingRotation.y, startingRotation.x, 0f);
                             break;
                         case VehicleState.NotInVehicle:

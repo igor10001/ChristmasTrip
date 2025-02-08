@@ -249,10 +249,10 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 1.62
   intensity:
     m_OverrideState: 1
-    m_Value: 0.44
+    m_Value: 0
   scatter:
     m_OverrideState: 1
     m_Value: 0.8
@@ -318,9 +318,9 @@ MonoBehaviour:
     m_Value: 1
   colorMode:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   colorSyncedOn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   bitsR:
     m_OverrideState: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 2
   bitsSynced:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2
   bitsGray:
     m_OverrideState: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
     m_Value: 0
   bleedAmount:
     m_OverrideState: 1
-    m_Value: 0.91
+    m_Value: 0.95
   noiseResGlobal:
     m_OverrideState: 1
     m_Value: 1
@@ -388,16 +388,16 @@ MonoBehaviour:
     m_Value: 1
   filmGrainAmount:
     m_OverrideState: 1
-    m_Value: 0.016
+    m_Value: 0.02
   signalNoiseOn:
     m_OverrideState: 1
     m_Value: 1
   signalNoiseAmount:
     m_OverrideState: 1
-    m_Value: 0.093
+    m_Value: 0.03
   signalNoisePower:
     m_OverrideState: 1
-    m_Value: 0.729
+    m_Value: 0.2
   lineNoiseOn:
     m_OverrideState: 0
     m_Value: 1

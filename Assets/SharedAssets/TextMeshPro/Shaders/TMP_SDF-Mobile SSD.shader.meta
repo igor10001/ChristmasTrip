@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5a90b4dccdbd034ebc9a510843cbd5d
+guid: bd747ccaa486a694bab78a16ca86724e
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []
@@ -7,10 +7,3 @@ ShaderImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 269404
-  packageName: PolyStang CC
-  packageVersion: 1.1
-  assetPath: Assets/SharedAssets/TextMeshPro/Shaders/TMP_SDF-Mobile SSD.shader
-  uploadId: 655332

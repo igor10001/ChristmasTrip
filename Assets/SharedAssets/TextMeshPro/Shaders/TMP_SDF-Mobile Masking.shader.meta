@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ca0b3da2b5abd74d87d80eec0e8f46b
+guid: edb656b2b25f25b4bbfc5b82afbec688
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []
@@ -7,10 +7,3 @@ ShaderImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 269404
-  packageName: PolyStang CC
-  packageVersion: 1.1
-  assetPath: Assets/SharedAssets/TextMeshPro/Shaders/TMP_SDF-Mobile Masking.shader
-  uploadId: 655332

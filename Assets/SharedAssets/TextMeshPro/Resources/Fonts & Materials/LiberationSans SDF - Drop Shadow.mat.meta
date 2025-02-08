@@ -1,16 +1,8 @@
 fileFormatVersion: 2
-guid: 47f93ae481499724ead2ce035a730fa1
+guid: 1f8c82cac0b726246ad6c7920723c0da
 timeCreated: 1484172806
-licenseType: Store
+licenseType: Pro
 NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 269404
-  packageName: PolyStang CC
-  packageVersion: 1.1
-  assetPath: Assets/SharedAssets/TextMeshPro/Resources/Fonts & Materials/LiberationSans
-    SDF - Drop Shadow.mat
-  uploadId: 655332
