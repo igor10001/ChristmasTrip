@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using Ezereal;
 
 [System.Serializable]
 public struct VehicleInteractionRefs
@@ -8,10 +8,10 @@ public struct VehicleInteractionRefs
    public Transform playerTransform;
    public Transform VehicleSeatTransform;
    public PlayerController playerController;
-  // public GameObject[] camera;
    public GameObject playerCamera;
    public GameObject carCamera;
-
+   public CharacterController CharacterController;
+   public EzerealCarController ezerealCarController;
 
 }
 public class VehicleInteraction : MonoBehaviour
@@ -37,7 +37,10 @@ public class VehicleInteraction : MonoBehaviour
        // _vehicleInteractionRefs.camera[0].SetActive(false);
         _vehicleInteractionRefs.playerCamera.SetActive(false);
         _vehicleInteractionRefs.carCamera.SetActive(true);
-        //_vehicleInteractionRefs.camera[1].SetActive(true);
+        _vehicleInteractionRefs.CharacterController.enabled = false;
+        _vehicleInteractionRefs.CharacterController.enabled = false;
+        _vehicleInteractionRefs.ezerealCarController.enabled = true;
+
 
     }
 }

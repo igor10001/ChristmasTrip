@@ -39,6 +39,7 @@ namespace Ezereal
         [Header("Settings")]
         public bool isStarted = true;
 
+        public float rotation;
         public float maxForwardSpeed = 100f; // 100f default
         public float maxReverseSpeed = 30f; // 30f default
         public float horsePower = 1000f; // 100f0 default
@@ -48,7 +49,7 @@ namespace Ezereal
         public float steeringSpeed = 5f; // 0.5f default
         public float stopThreshold = 1f; // 1f default. At what speed car will make a full stop
         public float decelerationSpeed = 0.5f; // 0.5f default
-        public float maxSteeringWheelRotation = 360f; // 360 for real steering wheel. 120 would be more suitable for racing.
+        public float maxSteeringWheelRotation = 120f; // 360 for real steering wheel. 120 would be more suitable for racing.
 
         [Header("Drive Type")]
         public DriveTypes driveType = DriveTypes.RWD;
@@ -447,6 +448,7 @@ namespace Ezereal
 
         private void FixedUpdate()
         {
+           
             Debug.Log("current braking balue ==== " + currentBrakeValue);
             Debug.Log("current acceleration balue ==== " + currentAccelerationValue);
             Debug.Log("stationary state ==== " + stationary );
@@ -516,10 +518,10 @@ namespace Ezereal
 
             // Calculate the rotation based on the steer angle
             float normalizedSteerAngle = Mathf.Clamp(frontLeftWheelCollider.steerAngle, -maxSteerAngle, maxSteerAngle);
-            float rotation = Mathf.Lerp(maxSteeringWheelRotation, -maxSteeringWheelRotation, (normalizedSteerAngle + maxSteerAngle) / (2 * maxSteerAngle));
+            rotation = Mathf.Lerp(maxSteeringWheelRotation, -maxSteeringWheelRotation, (normalizedSteerAngle + maxSteerAngle) / (2 * maxSteerAngle));
 
             // Set the local rotation of the steering wheel
-            steeringWheel.localRotation = Quaternion.Euler(currentXAngle, 0, rotation);
+            steeringWheel.localRotation = Quaternion.Euler(currentXAngle, 0, rotation + 180);
         }
 
         void UpdateGearText(string gear)
@@ -538,14 +540,14 @@ namespace Ezereal
 
         void UpdateAccelerationSlider()
         {
-            if (currentGear == AutomaticGears.Drive || currentGear == AutomaticGears.Reverse)
+            /*if (currentGear == AutomaticGears.Drive || currentGear == AutomaticGears.Reverse)
             {
                 accelerationSlider.value = Mathf.Lerp(accelerationSlider.value, currentAccelerationValue, Time.deltaTime * 15f);
             }
             else
             {
                 accelerationSlider.value = 0;
-            }
+            }*/
         }
 
         public bool InAir()

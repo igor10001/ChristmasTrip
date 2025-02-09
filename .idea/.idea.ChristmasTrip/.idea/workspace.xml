@@ -102,6 +102,7 @@
       <workItem from="1736590814177" duration="4474000" />
       <workItem from="1736611584740" duration="13426000" />
       <workItem from="1739034456747" duration="2590000" />
+      <workItem from="1739059833460" duration="9219000" />
     </task>
     <servers />
   </component>
@@ -123,13 +124,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealCarController.cs</url>
-          <line>185</line>
+          <line>186</line>
           <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealCarController.cs" containingFunctionPresentation="Method 'Acceleration'">
             <startOffsets>
-              <option value="6653" />
+              <option value="6684" />
             </startOffsets>
             <endOffsets>
-              <option value="6735" />
+              <option value="6766" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
