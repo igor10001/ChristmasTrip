@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
+using System;
 
 
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController: MonoBehaviour
     {
 
+        public event EventHandler OnPickedSomething;
+        public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+        public class OnSelectedCounterChangedEventArgs : EventArgs
+        {
+            public BaseObject selectedObject;
+        }
+        [SerializeField] private LayerMask objectsLayerMask;
         private CharacterController controller;
         private Vector3 playerVelocity;
         private bool groundedPlayer;
@@ -15,6 +23,9 @@
         private PlayerInputManager _playerInputManager;
 
         private Transform cameraTransform;
+        private Vector3 lastInteractDir;
+        
+        private BaseObject selectedObject;
 
         private void Start()
         {
@@ -30,6 +41,44 @@
         
 
         void Update()
+        {
+            HandleMovement();
+            HandleInteractions();
+        }
+
+        private void HandleInteractions()
+        { 
+            Vector2 movement = _playerInputManager.GetPlayerMovement();
+            Vector3 moveDir = new Vector3(movement.x, 0, movement.y);
+            if(moveDir != Vector3.zero)
+            {
+                lastInteractDir = moveDir;
+            }
+
+            float interactDistance = 4f;
+            
+            if(Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, objectsLayerMask))
+            {
+                if(raycastHit.transform.TryGetComponent(out BaseObject baseObject))
+                {
+                    if(baseObject != selectedObject)
+                    {
+                        SetSelectedCounter(baseObject);
+                    }
+                }
+                else
+                {
+                    SetSelectedCounter(null);
+                }
+            }
+            else
+            {
+                SetSelectedCounter(null);
+            }
+
+        }
+
+        private void HandleMovement()
         {
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)
@@ -56,5 +105,14 @@
 
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+        }
+        
+        private void SetSelectedCounter(BaseObject selectedObject)
+        {
+            this.selectedObject = selectedObject;
+
+            OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs{
+                selectedObject = selectedObject
+            });
         }
     }

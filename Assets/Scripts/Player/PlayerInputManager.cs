@@ -5,14 +5,23 @@ using UnityEngine;
 
     public class PlayerInputManager : MonoBehaviour
 {
+   
+    
     private GamePlayerInput _playerInput;
 
-
+    public event EventHandler OnInteractionAction;
     private void Awake()
     {
         _playerInput = new GamePlayerInput();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _playerInput.Player.Interact.performed += InteractOnperformed;
+            
+    }
+
+    private void InteractOnperformed(InputAction.CallbackContext obj)
+    {
+        OnInteractionAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnEnable()
@@ -27,7 +36,8 @@ using UnityEngine;
 
     private void OnDestroy()
     {
-                _playerInput.Dispose();
+        _playerInput.Player.Interact.performed -= InteractOnperformed;
+        _playerInput.Dispose();
 
     }
 
