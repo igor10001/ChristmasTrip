@@ -526,16 +526,16 @@ namespace Ezereal
 
         void UpdateGearText(string gear)
         {
-            currentGearTMP_UI.text = gear;
-            currentGearTMP_Dashboard.text = gear;
+           //  currentGearTMP_UI.text = gear;
+           // currentGearTMP_Dashboard.text = gear;
         }
 
         void UpdateSpeedText(float speed)
         {
-            speed = Mathf.Abs(speed);
-
-            currentSpeedTMP_UI.text = speed.ToString("F0");
-            currentSpeedTMP_Dashboard.text = speed.ToString("F0");
+            // speed = Mathf.Abs(speed);
+            //
+            // currentSpeedTMP_UI.text = speed.ToString("F0");
+            // currentSpeedTMP_Dashboard.text = speed.ToString("F0");
         }
 
         void UpdateAccelerationSlider()

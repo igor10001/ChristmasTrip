@@ -125,7 +125,7 @@ namespace Ezereal
 
                 //Engine Pitch
 
-                float engineSoundPitch = 0.8f + (Mathf.Abs(ezerealCarController.vehicleRB.velocity.magnitude) / 25f);
+                float engineSoundPitch = 0.1f + (Mathf.Abs(ezerealCarController.vehicleRB.velocity.magnitude) / 25f);
                 engineAudio.pitch = engineSoundPitch;
 #endif
                 }

@@ -16,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a748e0c17f9c47308bbcde58c694d6704e00/d8/cb3eadcf/WheelCollider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e509afeff7384f24a8f0ac30527ff01c1cbe00/a4/4864b285/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputManager.cs.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.3/Runtime/Behaviours/CinemachineBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.3/Runtime/Core/CinemachineExtension.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -102,7 +103,7 @@
       <workItem from="1736590814177" duration="4474000" />
       <workItem from="1736611584740" duration="13426000" />
       <workItem from="1739034456747" duration="2590000" />
-      <workItem from="1739059833460" duration="9219000" />
+      <workItem from="1739059833460" duration="14555000" />
     </task>
     <servers />
   </component>
