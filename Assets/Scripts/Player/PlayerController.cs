@@ -64,15 +64,19 @@ using System;
                     if(baseObject != selectedObject)
                     {
                         SetSelectedCounter(baseObject);
+                        Debug.Log("Selected");
                     }
                 }
                 else
                 {
+                    Debug.Log("Deselected");
                     SetSelectedCounter(null);
                 }
             }
             else
             {
+                Debug.Log("Deselected");
+
                 SetSelectedCounter(null);
             }
 

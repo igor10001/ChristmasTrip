@@ -62,7 +62,7 @@ MonoBehaviour:
     m_Value: 480
   colorOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   colorMode:
     m_OverrideState: 0
     m_Value: 2
@@ -88,13 +88,13 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   ditherOn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   ditherMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 3
   ditherAmount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   paletteOn:
     m_OverrideState: 0
@@ -113,13 +113,13 @@ MonoBehaviour:
   paletteCustomName: 
   paletteCustomInit: 0
   bleedOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   crtMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   bleedAmount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   noiseResGlobal:
     m_OverrideState: 0
@@ -131,10 +131,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 480
   filmgrainOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   filmGrainAmount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.016
   signalNoiseOn:
     m_OverrideState: 0
