@@ -48,16 +48,10 @@ using System;
 
         private void HandleInteractions()
         { 
-            Vector2 movement = _playerInputManager.GetPlayerMovement();
-            Vector3 moveDir = new Vector3(movement.x, 0, movement.y);
-            if(moveDir != Vector3.zero)
-            {
-                lastInteractDir = moveDir;
-            }
-
-            float interactDistance = 4f;
+           
+            float interactDistance = 5f;
             
-            if(Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, objectsLayerMask))
+            if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, interactDistance, objectsLayerMask))
             {
                 if(raycastHit.transform.TryGetComponent(out BaseObject baseObject))
                 {
@@ -70,18 +64,25 @@ using System;
                 else
                 {
                     Debug.Log("Deselected");
-                    SetSelectedCounter(null);
+                    DeselectObject();
                 }
             }
             else
             {
                 Debug.Log("Deselected");
 
-                SetSelectedCounter(null);
+                DeselectObject();
+
             }
 
         }
-
+        private void DeselectObject()
+        {
+            if (selectedObject != null)
+            {
+                SetSelectedCounter(null);
+            }
+        }
         private void HandleMovement()
         {
             groundedPlayer = controller.isGrounded;

@@ -101,7 +101,7 @@ MonoBehaviour:
     m_Value: 0
   paletteId:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 10
   paletteDelta:
     m_OverrideState: 0
     m_Value: 5
@@ -114,15 +114,15 @@ MonoBehaviour:
   paletteCustomInit: 0
   bleedOn:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   crtMode:
     m_OverrideState: 1
     m_Value: 0
   bleedAmount:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.95
   noiseResGlobal:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   noiseResWidth:
     m_OverrideState: 0
@@ -135,16 +135,16 @@ MonoBehaviour:
     m_Value: 0
   filmGrainAmount:
     m_OverrideState: 1
-    m_Value: 0.016
+    m_Value: 0.02
   signalNoiseOn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   signalNoiseAmount:
-    m_OverrideState: 0
-    m_Value: 0.3
+    m_OverrideState: 1
+    m_Value: 0.03
   signalNoisePower:
-    m_OverrideState: 0
-    m_Value: 0.83
+    m_OverrideState: 1
+    m_Value: 0.2
   lineNoiseOn:
     m_OverrideState: 0
     m_Value: 0
@@ -179,8 +179,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   stretchOn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   jitterHOn:
     m_OverrideState: 0
     m_Value: 0
