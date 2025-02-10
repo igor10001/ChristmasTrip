@@ -2,60 +2,73 @@
 using System;
 
 
-    [RequireComponent(typeof(CharacterController))]
-    public class PlayerController: MonoBehaviour
+[RequireComponent(typeof(CharacterController))]
+public class PlayerController : MonoBehaviour
+{
+    public event EventHandler OnPickedSomething;
+    public event EventHandler<OnSelectedBaseObjChangedEventArgs> OnSelectedBaseObjChanged;
+
+    public class OnSelectedBaseObjChangedEventArgs : EventArgs
     {
+        public BaseObject selectedObject;
+    }
 
-        public event EventHandler OnPickedSomething;
-        public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
-        public class OnSelectedCounterChangedEventArgs : EventArgs
+    [SerializeField] private LayerMask objectsLayerMask;
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
+    [SerializeField] private float playerSpeed = 2.0f;
+
+    private float gravityValue = -9.81f;
+    private PlayerInputManager _playerInputManager;
+
+    private Transform cameraTransform;
+    private Vector3 lastInteractDir;
+
+    private BaseObject selectedObject;
+    public bool stopMovement;
+
+    private void Start()
+    {
+        controller = GetComponent<CharacterController>();
+        _playerInputManager = GetComponent<PlayerInputManager>();
+        cameraTransform = Camera.main.transform;
+        _playerInputManager.OnInteractionAction += PlayerInputManagerOnInteractionAction;
+    }
+
+    private void PlayerInputManagerOnInteractionAction(object sender, EventArgs e)
+    {
+        if (selectedObject != null)
         {
-            public BaseObject selectedObject;
+            selectedObject.Interact(this);
         }
-        [SerializeField] private LayerMask objectsLayerMask;
-        private CharacterController controller;
-        private Vector3 playerVelocity;
-        private bool groundedPlayer;
-        [SerializeField]
-        private float playerSpeed = 2.0f;
-        
-        private float gravityValue = -9.81f;
-        private PlayerInputManager _playerInputManager;
+    }
 
-        private Transform cameraTransform;
-        private Vector3 lastInteractDir;
-        
-        private BaseObject selectedObject;
 
-        private void Start()
-        {
-            controller = GetComponent<CharacterController>();
-            _playerInputManager = GetComponent<PlayerInputManager>();
-            cameraTransform = Camera.main.transform;    
-
-            
-
-        }
-        
-        
-        
-
-        void Update()
+    void Update()
+    {
+        if (!stopMovement)
         {
             HandleMovement();
-            HandleInteractions();
         }
 
-        private void HandleInteractions()
-        { 
-           
-            float interactDistance = 5f;
-            
-            if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, interactDistance, objectsLayerMask))
+        HandleInteractions();
+    }
+
+    private void HandleInteractions()
+    {
+        float interactDistance = 5f;
+
+
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit interactionHit,
+                interactDistance))
+        {
+            Debug.Log("Interaction Raycast hit: " + interactionHit.transform.name);
+            if (IsObjectOnLayer(objectsLayerMask, interactionHit.collider.gameObject))
             {
-                if(raycastHit.transform.TryGetComponent(out BaseObject baseObject))
+                if (interactionHit.collider.TryGetComponent(out BaseObject baseObject))
                 {
-                    if(baseObject != selectedObject)
+                    if (baseObject != selectedObject)
                     {
                         SetSelectedCounter(baseObject);
                         Debug.Log("Selected");
@@ -69,55 +82,66 @@ using System;
             }
             else
             {
-                Debug.Log("Deselected");
-
-                DeselectObject();
-
-            }
-
-        }
-        private void DeselectObject()
-        {
-            if (selectedObject != null)
-            {
-                SetSelectedCounter(null);
+                Debug.Log("Hit object is not on the correct layer, deselecting.");
+                DeselectObject(); // If object is not on the layer, deselect it
             }
         }
-        private void HandleMovement()
+        else
         {
-            groundedPlayer = controller.isGrounded;
-            if (groundedPlayer && playerVelocity.y < 0)
-            {
-                playerVelocity.y = 0f;
-            }
-
-           
-            Vector2 movement = _playerInputManager.GetPlayerMovement();
-            Vector3 move = new Vector3(movement.x, 0, movement.y);
-            move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-
-            Vector3 movementDelta = move * playerSpeed;
-            movementDelta *= Time.deltaTime;
-            move.y = 0f;
-            controller.Move(movementDelta);
-
-            if (move != Vector3.zero)
-            {
-                gameObject.transform.forward = move;
-            }
-
-
-
-            playerVelocity.y += gravityValue * Time.deltaTime;
-            controller.Move(playerVelocity * Time.deltaTime);
+            Debug.Log("Hit object is not on the correct layer, deselecting.");
+            DeselectObject(); // If object is not on the layer, deselect it
         }
         
-        private void SetSelectedCounter(BaseObject selectedObject)
-        {
-            this.selectedObject = selectedObject;
+    }
 
-            OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs{
-                selectedObject = selectedObject
-            });
+    private void DeselectObject()
+    {
+        if (selectedObject != null)
+        {
+            SetSelectedCounter(null);
         }
     }
+
+    bool IsObjectOnLayer(LayerMask layerMask, GameObject obj)
+    {
+        return (layerMask.value & (1 << obj.layer)) != 0;
+    }
+
+    private void HandleMovement()
+    {
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+
+
+        Vector2 movement = _playerInputManager.GetPlayerMovement();
+        Vector3 move = new Vector3(movement.x, 0, movement.y);
+        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+
+        Vector3 movementDelta = move * playerSpeed;
+        movementDelta *= Time.deltaTime;
+        move.y = 0f;
+        controller.Move(movementDelta);
+
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    private void SetSelectedCounter(BaseObject selectedObject)
+    {
+        this.selectedObject = selectedObject;
+
+        OnSelectedBaseObjChanged?.Invoke(this, new OnSelectedBaseObjChangedEventArgs
+        {
+            selectedObject = selectedObject
+        });
+    }
+}

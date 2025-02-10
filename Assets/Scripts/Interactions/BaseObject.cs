@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Interactions;
 using UnityEngine;
 
-public class BaseObject : MonoBehaviour, IBaseObject
+public class BaseObject : MonoBehaviour
 {
     public virtual void Interact(PlayerController player)
     {
-
+        
     }
 }

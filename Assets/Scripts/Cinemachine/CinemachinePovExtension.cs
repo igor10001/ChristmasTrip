@@ -6,7 +6,7 @@ public class CinemachinePovExtension : CinemachineExtension
     public enum VehicleState { InVehicle, NotInVehicle }
 
     [SerializeField] private VehicleState currentState;
-    [SerializeField] private Transform rotationReference; // Car Transform
+    [SerializeField] private Transform rotationReference; 
     [SerializeField] private float clampAngleY = 80f;
     [SerializeField] private float clampAngleX = 90f;
     [SerializeField] private bool xClamp;
@@ -15,7 +15,7 @@ public class CinemachinePovExtension : CinemachineExtension
     [SerializeField] private PlayerInputManager _playerInputManager;
 
     private Vector2 rotationInput;
-    private Quaternion relativeRotation; // Stores relative camera rotation to the car
+    private Quaternion relativeRotation; 
     private bool hasInitializedInVehicle = false;
 
     private void Start()
@@ -34,7 +34,6 @@ public class CinemachinePovExtension : CinemachineExtension
         if (rotationReference == null) return;
         Quaternion carRotation = rotationReference.rotation;
 
-        // Apply car rotation while maintaining manual input
         Quaternion targetRotation = carRotation * relativeRotation;
         transform.rotation = targetRotation;
     }
@@ -52,19 +51,16 @@ public class CinemachinePovExtension : CinemachineExtension
                         hasInitializedInVehicle = true;
                     }
 
-                    AlignCameraVehicleRotation(); // Sync with vehicle rotation
+                    AlignCameraVehicleRotation(); 
 
-                    // Get player input
                     Vector2 deltaInput = _playerInputManager.GetMouseDelta();
                     rotationInput.x += deltaInput.x * verticalSpeed * deltaTime;
                     rotationInput.y += deltaInput.y * horizontalSpeed * deltaTime;
 
-                    // Clamp vertical rotation
                     rotationInput.y = Mathf.Clamp(rotationInput.y, -clampAngleY, clampAngleY);
                     if (xClamp)
                         rotationInput.x = Mathf.Clamp(rotationInput.x, -clampAngleX, clampAngleX);
 
-                    // Apply manual rotation on top of car rotation
                     Quaternion manualRotation = Quaternion.Euler(-rotationInput.y, rotationInput.x, 0);
                     state.RawOrientation = transform.rotation * manualRotation;
                     break;
