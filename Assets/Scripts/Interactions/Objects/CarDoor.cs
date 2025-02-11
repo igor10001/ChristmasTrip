@@ -30,7 +30,6 @@ namespace Interactions.Objects
             _vehicleInteractionRefs.playerCamera.SetActive(false);
             _vehicleInteractionRefs.carCamera.SetActive(true);
             _vehicleInteractionRefs.CharacterController.enabled = false;
-            _vehicleInteractionRefs.CharacterController.enabled = false;
             _vehicleInteractionRefs.ezerealCarController.enabled = true;
         }
 

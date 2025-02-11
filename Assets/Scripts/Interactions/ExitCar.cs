@@ -2,19 +2,47 @@ using System;
 using System.Collections;
 using DefaultNamespace;
 using UnityEngine;
+using Ezereal;
 using UnityEngine.InputSystem;
+
 
 namespace Interactions
 {
+    
+    
+    [System.Serializable]
+    public struct ExitCarTransitionRefs
+    {
+        public Transform exitPoint;
+        public PlayerController playerController;
+        public GameObject playerCamera;
+        public GameObject carCamera;
+        public CharacterController CharacterController;
+        public EzerealCarController ezerealCarController;
+
+    }
+    
+    
     public class ExitCar : MonoBehaviour
     {
         [SerializeField] private PlayerInputManager _playerInputManager;
         [SerializeField] private Rigidbody rb;
         [SerializeField] private GameObject hint;
-        
         public float thresholdSpeed;
         private Coroutine hintCoroutine;
-        private bool hasShownHint = false; // ✅ Flag to ensure hint shows only once
+        private bool hasShownHint = false; 
+        
+        //data exit car
+        //exit transform from car
+        [SerializeField] private PlayerController _playerController;//reset position, rotation
+        //  playerController.stopMovement = true;
+        //car camera false
+        // playuer camera true
+        // character controler.player true
+        // change car engine sound to idle
+
+        [SerializeField] private ExitCarTransitionRefs _exitCarTransitionRefs;
+        
 
         private void OnEnable()
         {
@@ -54,7 +82,7 @@ namespace Interactions
                         hintCoroutine = null;
                     }
                     
-                    hasShownHint = false; // ✅ Reset flag when speed is too high again
+                    hasShownHint = false; 
                 }
             }
         }
@@ -65,7 +93,7 @@ namespace Interactions
 
             if (speed <= thresholdSpeed)
             {
-                Debug.Log("Space to exit car pressed! Car speed is low enough.");
+                ExitCarActions();
             }
             else
             {
@@ -79,6 +107,19 @@ namespace Interactions
             yield return new WaitForSeconds(duration);
             hint.SetActive(false);
             hintCoroutine = null;
+        }
+
+        private void ExitCarActions()
+        {
+            PlayerStateManager.SetState(PlayerState.NotInVehicle);
+            _exitCarTransitionRefs.playerController.stopMovement = false;
+            _exitCarTransitionRefs.playerController.transform.position = _exitCarTransitionRefs.exitPoint.position;
+            _exitCarTransitionRefs.playerController.transform.rotation = _exitCarTransitionRefs.exitPoint.rotation;
+            // _vehicleInteractionRefs.camera[0].SetActive(false);
+            _exitCarTransitionRefs.playerCamera.SetActive(true);
+            _exitCarTransitionRefs.carCamera.SetActive(false);
+            _exitCarTransitionRefs.CharacterController.enabled = true;
+           //    _exitCarTransitionRefs.ezerealCarController.enabled = false;
         }
     }
 }
