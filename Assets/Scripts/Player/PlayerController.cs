@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using DefaultNamespace;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public event EventHandler OnPickedSomething;
     public event EventHandler<OnSelectedBaseObjChangedEventArgs> OnSelectedBaseObjChanged;
-
+    
     public class OnSelectedBaseObjChangedEventArgs : EventArgs
     {
         public BaseObject selectedObject;
@@ -30,10 +31,28 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        PlayerStateManager.SetState(PlayerState.NotInVehicle);
         controller = GetComponent<CharacterController>();
         _playerInputManager = GetComponent<PlayerInputManager>();
         cameraTransform = Camera.main.transform;
         _playerInputManager.OnInteractionAction += PlayerInputManagerOnInteractionAction;
+
+    }
+
+
+    private void OnEnable()
+    {
+
+    }
+    private void OnDisable()
+    {
+        _playerInputManager.OnInteractionAction -= PlayerInputManagerOnInteractionAction;
+
+    }
+    private void OnDestroy()
+    {
+        _playerInputManager.OnInteractionAction -= PlayerInputManagerOnInteractionAction;
+
     }
 
     private void PlayerInputManagerOnInteractionAction(object sender, EventArgs e)

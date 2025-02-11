@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using Cinemachine;
 
+using DefaultNamespace;
+
 public class CinemachinePovExtension : CinemachineExtension
 {
-    public enum VehicleState { InVehicle, NotInVehicle }
 
-    [SerializeField] private VehicleState currentState;
     [SerializeField] private Transform rotationReference; 
     [SerializeField] private float clampAngleY = 80f;
     [SerializeField] private float clampAngleX = 90f;
@@ -20,8 +20,21 @@ public class CinemachinePovExtension : CinemachineExtension
 
     private void Start()
     {
+        PlayerStateManager.OnEnterVehicle += PlayerStateManagerOnEnterVehicle;
+        PlayerStateManager.OnExitVehicle += PlayerStateManagerOnExitVehicle;
         if (rotationReference != null)
             relativeRotation = Quaternion.Inverse(rotationReference.rotation) * transform.rotation;
+        
+    }
+
+    private void PlayerStateManagerOnExitVehicle()
+    {
+        
+    }
+
+    private void PlayerStateManagerOnEnterVehicle()
+    {
+        
     }
 
     private void AlignCameraOnVehicleEnter()
@@ -42,9 +55,11 @@ public class CinemachinePovExtension : CinemachineExtension
     {
         if (vcam.Follow && stage == CinemachineCore.Stage.Aim)
         {
+            PlayerState currentState = PlayerStateManager.CurrentState;
             switch (currentState)
             {
-                case VehicleState.InVehicle:
+                case PlayerState.InVehicle:
+                    Debug.Log("trarara");
                     if (!hasInitializedInVehicle)
                     {
                         AlignCameraOnVehicleEnter();
@@ -65,7 +80,8 @@ public class CinemachinePovExtension : CinemachineExtension
                     state.RawOrientation = transform.rotation * manualRotation;
                     break;
 
-                case VehicleState.NotInVehicle:
+                case PlayerState.NotInVehicle:
+                    Debug.Log("fafa");
                     Vector2 freeLookInput = _playerInputManager.GetMouseDelta();
                     rotationInput.x += freeLookInput.x * verticalSpeed * deltaTime;
                     rotationInput.y += freeLookInput.y * horizontalSpeed * deltaTime;

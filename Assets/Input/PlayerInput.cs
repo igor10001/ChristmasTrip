@@ -192,12 +192,12 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
         },
         {
             ""name"": ""Vehicle"",
-            ""id"": ""f606a873-751a-4b29-9618-7f0dd23cc1e9"",
+            ""id"": ""ed9c32ed-84d1-4dfe-bcaa-f5f775a2c45f"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""ExitVehicle"",
                     ""type"": ""Button"",
-                    ""id"": ""7d90c78a-b210-4596-8054-21dd772257f5"",
+                    ""id"": ""0320dba0-a905-4bf3-87b8-8ef70179285a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -207,12 +207,12 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""9f30952a-321f-476d-a446-cf60a3a6697a"",
-                    ""path"": """",
+                    ""id"": ""9ebad6b5-d347-464b-9e05-34ee19824ef3"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""ExitVehicle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -228,7 +228,7 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // Vehicle
         m_Vehicle = asset.FindActionMap("Vehicle", throwIfNotFound: true);
-        m_Vehicle_Newaction = m_Vehicle.FindAction("New action", throwIfNotFound: true);
+        m_Vehicle_ExitVehicle = m_Vehicle.FindAction("ExitVehicle", throwIfNotFound: true);
     }
 
     ~@GamePlayerInput()
@@ -358,12 +358,12 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
     // Vehicle
     private readonly InputActionMap m_Vehicle;
     private List<IVehicleActions> m_VehicleActionsCallbackInterfaces = new List<IVehicleActions>();
-    private readonly InputAction m_Vehicle_Newaction;
+    private readonly InputAction m_Vehicle_ExitVehicle;
     public struct VehicleActions
     {
         private @GamePlayerInput m_Wrapper;
         public VehicleActions(@GamePlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Vehicle_Newaction;
+        public InputAction @ExitVehicle => m_Wrapper.m_Vehicle_ExitVehicle;
         public InputActionMap Get() { return m_Wrapper.m_Vehicle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -373,16 +373,16 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_VehicleActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_VehicleActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @ExitVehicle.started += instance.OnExitVehicle;
+            @ExitVehicle.performed += instance.OnExitVehicle;
+            @ExitVehicle.canceled += instance.OnExitVehicle;
         }
 
         private void UnregisterCallbacks(IVehicleActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @ExitVehicle.started -= instance.OnExitVehicle;
+            @ExitVehicle.performed -= instance.OnExitVehicle;
+            @ExitVehicle.canceled -= instance.OnExitVehicle;
         }
 
         public void RemoveCallbacks(IVehicleActions instance)
@@ -408,6 +408,6 @@ public partial class @GamePlayerInput: IInputActionCollection2, IDisposable
     }
     public interface IVehicleActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnExitVehicle(InputAction.CallbackContext context);
     }
 }

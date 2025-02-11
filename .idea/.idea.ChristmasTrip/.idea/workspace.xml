@@ -22,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.3/Runtime/Behaviours/CinemachineBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.3/Runtime/Core/CinemachineExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.0/Samples~/GamepadMouseCursor/GamepadMouseCursorUIActions.inputactions" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Runtime/UGUI/Util/PrivateFieldSetter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -69,10 +70,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27984">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27984" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -109,7 +110,8 @@
       <workItem from="1739059833460" duration="14555000" />
       <workItem from="1739180893677" duration="2680000" />
       <workItem from="1739202811967" duration="16348000" />
-      <workItem from="1739226379085" duration="3294000" />
+      <workItem from="1739226379085" duration="13080000" />
+      <workItem from="1739259407416" duration="5994000" />
     </task>
     <servers />
   </component>
@@ -143,17 +145,43 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/CursorVisual.cs</url>
-          <line>27</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Scripts\UI\CursorVisual.cs" containingFunctionPresentation="Method 'PlayerOnSelectedBaseObjChanged'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerStateManager.cs</url>
+          <line>22</line>
+          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Scripts\PlayerStateManager.cs" containingFunctionPresentation="Property 'CurrentState'">
             <startOffsets>
-              <option value="746" />
+              <option value="553" />
             </startOffsets>
             <endOffsets>
-              <option value="803" />
+              <option value="578" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Cinemachine/CinemachinePovExtension.cs</url>
+          <line>22</line>
+          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Scripts\Cinemachine\CinemachinePovExtension.cs" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="687" />
+            </startOffsets>
+            <endOffsets>
+              <option value="757" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Cinemachine/CinemachinePovExtension.cs</url>
+          <line>23</line>
+          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Scripts\Cinemachine\CinemachinePovExtension.cs" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="766" />
+            </startOffsets>
+            <endOffsets>
+              <option value="834" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

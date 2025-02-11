@@ -170,12 +170,12 @@
         },
         {
             "name": "Vehicle",
-            "id": "f606a873-751a-4b29-9618-7f0dd23cc1e9",
+            "id": "ed9c32ed-84d1-4dfe-bcaa-f5f775a2c45f",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "ExitVehicle",
                     "type": "Button",
-                    "id": "7d90c78a-b210-4596-8054-21dd772257f5",
+                    "id": "0320dba0-a905-4bf3-87b8-8ef70179285a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -185,12 +185,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9f30952a-321f-476d-a446-cf60a3a6697a",
-                    "path": "",
+                    "id": "9ebad6b5-d347-464b-9e05-34ee19824ef3",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ExitVehicle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
