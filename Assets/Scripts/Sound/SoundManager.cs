@@ -1,10 +1,13 @@
+using System;
+using DefaultNamespace.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace DefaultNamespace.Sound
 {
     public class SoundManager : MonoBehaviour
     {
-        private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
+        /*private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
 
 
         public static SoundManager Instance { get; private set; }
@@ -37,7 +40,7 @@ namespace DefaultNamespace.Sound
             CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;
             Player.Instance.OnPickedSomething += Player_OnPickedSomething;
             BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
-            TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;*/
+            TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;#1#
         }
 
         private void OnDisable()
@@ -92,7 +95,7 @@ namespace DefaultNamespace.Sound
             DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
             PlaySound(audioClipRefsSO.deliverySuccess, deliveryCounter.transform.position);
         }
-        */
+        #1#
 
         /*public void PlaySound(AudioClip[] audioClipArray, Vector3 position, float volumeMultiplier = 1f)
         {
@@ -100,7 +103,7 @@ namespace DefaultNamespace.Sound
 
             AudioClip clipToPlay = audioClipArray[Random.Range(0, audioClipArray.Length)];
             PlaySound(clipToPlay, position, volumeMultiplier);
-        }*/
+        }#1#
 
         public void PlaySound(AudioClip audioClip, Vector3 position, AudioMixerGroup mixerGroup,
             float volumeMultiplier = 1f)
@@ -124,7 +127,7 @@ namespace DefaultNamespace.Sound
 
         public void PlayWarningSound(Vector3 position) {
             PlaySound(audioClipRefsSO.warning, position);
-        }*/
+        }#1#
 
         public void ChangeVolume()
         {
@@ -141,6 +144,6 @@ namespace DefaultNamespace.Sound
         public float GetVolume()
         {
             return volume;
-        }
+        }*/
     }
 }
