@@ -13,7 +13,6 @@ public class CinemachinePovExtension : CinemachineExtension
     [SerializeField] private float horizontalSpeed = 10f;
     [SerializeField] private float verticalSpeed = 10f;
     [SerializeField] private PlayerInputManager _playerInputManager;
-
     private Vector2 rotationInput;
     private Quaternion relativeRotation; 
     private bool hasInitializedInVehicle = false;
@@ -81,6 +80,8 @@ public class CinemachinePovExtension : CinemachineExtension
                     break;
 
                 case PlayerState.NotInVehicle:
+                  
+                    
                     Debug.Log("fafa");
                     Vector2 freeLookInput = _playerInputManager.GetMouseDelta();
                     rotationInput.x += freeLookInput.x * verticalSpeed * deltaTime;

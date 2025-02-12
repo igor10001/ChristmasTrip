@@ -46,20 +46,20 @@ MonoBehaviour:
   g_jitter: 1
   g_signal: 1
   g_feedback: 1
-  g_extra: 0
-  g_bypass: 0
+  g_extra: 1
+  g_bypass: 1
   pixelOn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   screenResPresetId:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   screenWidth:
-    m_OverrideState: 0
-    m_Value: 640
+    m_OverrideState: 1
+    m_Value: 400
   screenHeight:
-    m_OverrideState: 0
-    m_Value: 480
+    m_OverrideState: 1
+    m_Value: 400
   colorOn:
     m_OverrideState: 0
     m_Value: 1
@@ -98,10 +98,10 @@ MonoBehaviour:
     m_Value: 1
   paletteOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   paletteId:
     m_OverrideState: 0
-    m_Value: 10
+    m_Value: 7
   paletteDelta:
     m_OverrideState: 0
     m_Value: 5
@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Value: 480
   filmgrainOn:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   filmGrainAmount:
     m_OverrideState: 1
     m_Value: 0.02
@@ -156,7 +156,7 @@ MonoBehaviour:
     m_Value: 5
   tapeNoiseOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   tapeNoiseTH:
     m_OverrideState: 0
     m_Value: 0.63
@@ -168,13 +168,13 @@ MonoBehaviour:
     m_Value: 1
   scanLinesOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   scanLineWidth:
     m_OverrideState: 0
     m_Value: 10
   linesFloatOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   linesFloatSpeed:
     m_OverrideState: 0
     m_Value: 1
@@ -198,19 +198,19 @@ MonoBehaviour:
     m_Value: 1
   twitchHOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   twitchHFreq:
     m_OverrideState: 0
     m_Value: 1
   twitchVOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   twitchVFreq:
     m_OverrideState: 0
     m_Value: 1
   signalTweakOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   signalAdjustY:
     m_OverrideState: 0
     m_Value: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
     m_Value: 1
   feedbackOn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   feedbackThresh:
     m_OverrideState: 0
     m_Value: 0.1
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_Value: 1
   response:
     m_OverrideState: 1
-    m_Value: 0.934
+    m_Value: 1
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}

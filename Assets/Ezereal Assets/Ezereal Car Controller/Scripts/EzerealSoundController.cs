@@ -39,6 +39,7 @@ namespace Ezereal
 
         public void TurnOnEngineSound()
         {
+            useSounds = true;
             if (useSounds)
             {
                 if (engineAudio != null)
@@ -50,13 +51,13 @@ namespace Ezereal
 
         public void TurnOffEngineSound()
         {
-            if (useSounds)
-            {
+            useSounds = false;
+            
                 if (engineAudio != null)
                 {
                     engineAudio.Stop();
                 }
-            }
+            
         }
 
         void Update()
@@ -125,7 +126,7 @@ namespace Ezereal
 
                 //Engine Pitch
 
-                float engineSoundPitch = 0.1f + (Mathf.Abs(ezerealCarController.vehicleRB.velocity.magnitude) / 25f);
+                float engineSoundPitch = 0.1f + (Mathf.Abs(ezerealCarController.vehicleRB.velocity.magnitude) / 40f);
                 engineAudio.pitch = engineSoundPitch;
 #endif
                 }

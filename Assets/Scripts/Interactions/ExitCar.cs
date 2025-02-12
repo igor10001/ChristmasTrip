@@ -29,17 +29,10 @@ namespace Interactions
         [SerializeField] private Rigidbody rb;
         [SerializeField] private GameObject hint;
         public float thresholdSpeed;
-        private Coroutine hintCoroutine;
-        private bool hasShownHint = false; 
         
-        //data exit car
-        //exit transform from car
+      
         [SerializeField] private PlayerController _playerController;//reset position, rotation
-        //  playerController.stopMovement = true;
-        //car camera false
-        // playuer camera true
-        // character controler.player true
-        // change car engine sound to idle
+      
 
         [SerializeField] private ExitCarTransitionRefs _exitCarTransitionRefs;
         
@@ -59,33 +52,31 @@ namespace Interactions
             _playerInputManager.OnVechicleExitAction -= OnVehicleExitAction;
         }
 
+        private bool wasHintActive = false;
+
         private void Update()
         {
             if (PlayerStateManager.CurrentState == PlayerState.InVehicle)
             {
                 float speed = rb.velocity.magnitude * 3.6f;
+                bool shouldShowHint = speed <= thresholdSpeed;
 
-                if (speed <= thresholdSpeed)
+                if (wasHintActive != shouldShowHint)
                 {
-                    if (!hasShownHint) // ✅ Show hint only once
-                    {
-                        hasShownHint = true;
-                        hintCoroutine = StartCoroutine(ShowHintForSeconds(4f));
-                    }
+                    hint.SetActive(shouldShowHint);
+                    wasHintActive = shouldShowHint;
                 }
-                else
+            }
+            else
+            {
+                if (wasHintActive)
                 {
-                    if (hintCoroutine != null)
-                    {
-                        StopCoroutine(hintCoroutine);
-                        hint.SetActive(false);
-                        hintCoroutine = null;
-                    }
-                    
-                    hasShownHint = false; 
+                    hint.SetActive(false);
+                    wasHintActive = false;
                 }
             }
         }
+
 
         private void OnVehicleExitAction(object sender, EventArgs e)
         {
@@ -101,25 +92,24 @@ namespace Interactions
             }
         }
 
-        private IEnumerator ShowHintForSeconds(float duration)
-        {
-            hint.SetActive(true);
-            yield return new WaitForSeconds(duration);
-            hint.SetActive(false);
-            hintCoroutine = null;
-        }
+     
 
         private void ExitCarActions()
         {
-            PlayerStateManager.SetState(PlayerState.NotInVehicle);
-            _exitCarTransitionRefs.playerController.stopMovement = false;
-            _exitCarTransitionRefs.playerController.transform.position = _exitCarTransitionRefs.exitPoint.position;
-            _exitCarTransitionRefs.playerController.transform.rotation = _exitCarTransitionRefs.exitPoint.rotation;
-            // _vehicleInteractionRefs.camera[0].SetActive(false);
-            _exitCarTransitionRefs.playerCamera.SetActive(true);
-            _exitCarTransitionRefs.carCamera.SetActive(false);
-            _exitCarTransitionRefs.CharacterController.enabled = true;
-           //    _exitCarTransitionRefs.ezerealCarController.enabled = false;
+            ScreenTransition.Instance.StartTransition(() =>
+            {
+                PlayerStateManager.SetState(PlayerState.NotInVehicle);
+                _exitCarTransitionRefs.playerController.stopMovement = false;
+                _exitCarTransitionRefs.playerController.transform.position = _exitCarTransitionRefs.exitPoint.position;
+                _exitCarTransitionRefs.playerController.transform.rotation = _exitCarTransitionRefs.exitPoint.rotation;
+                // _vehicleInteractionRefs.camera[0].SetActive(false);
+                _exitCarTransitionRefs.playerCamera.SetActive(true);
+                _exitCarTransitionRefs.carCamera.SetActive(false);
+                _exitCarTransitionRefs.CharacterController.enabled = true;
+                _exitCarTransitionRefs.ezerealCarController.StopCar();
+                    _exitCarTransitionRefs.ezerealCarController.enabled = false;
+            });
+         
         }
     }
 }

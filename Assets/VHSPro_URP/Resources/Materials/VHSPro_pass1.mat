@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - VHS_DITHER
+  - VHS_FILMGRAIN_ON
   - VHS_STRETCH_ON
   - VHS_YIQNOISE_ON
   m_InvalidKeywords: []

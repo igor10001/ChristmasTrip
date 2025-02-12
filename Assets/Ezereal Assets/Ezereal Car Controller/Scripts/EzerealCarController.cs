@@ -111,14 +111,14 @@ namespace Ezereal
                     ezerealLightController.MiscLightsOn();
                 }
 
-                if (ezerealSoundController != null)
+                /*if (ezerealSoundController != null)
                 {
                     ezerealSoundController.TurnOnEngineSound();
-                }
+                }*/
             }
         }
 
-        void OnStartCar()
+        public void OnStartCar()
         {
             isStarted = !isStarted;
 
@@ -128,7 +128,7 @@ namespace Ezereal
 
                 if (ezerealLightController != null)
                 {
-                    ezerealLightController.MiscLightsOn();
+                 //   ezerealLightController.MiscLightsOn();
                 }
 
                 if (ezerealSoundController != null)
@@ -143,7 +143,7 @@ namespace Ezereal
 
                 if (ezerealLightController != null)
                 {
-                    ezerealLightController.AllLightsOff();
+                   // ezerealLightController.AllLightsOff();
                 }
 
                 if (ezerealSoundController != null)
@@ -158,6 +158,51 @@ namespace Ezereal
             }
 
 
+        }
+        public void StartCar()
+        {
+          //  if (isStarted) return; 
+
+            isStarted = true;
+            Debug.Log("Car started.");
+
+            if (ezerealLightController != null)
+            {
+                //ezerealLightController.AllLightsOn();
+            }
+
+            if (ezerealSoundController != null)
+            {
+                ezerealSoundController.TurnOnEngineSound();
+            }
+        }
+
+        public void StopCar()
+        {
+          //  if (!isStarted) return; // If the car is already off, do nothing.
+    
+            isStarted = false;
+            Debug.Log("Car stopped.");
+
+            if (ezerealLightController != null)
+            {
+               // ezerealLightController.AllLightsOff();
+            }
+
+            if (ezerealSoundController != null)
+            {
+                ezerealSoundController.TurnOffEngineSound();
+            }
+
+            // Stop all wheel movement
+            foreach (var wheel in wheels)
+            {
+                wheel.motorTorque = 0;
+                wheel.brakeTorque = brakePower; // Apply brakes to stop movement
+            }
+
+            vehicleRB.velocity = Vector3.zero; // Ensure the car stops moving
+            vehicleRB.angularVelocity = Vector3.zero;
         }
 
         void OnAccelerate(InputValue accelerationValue)

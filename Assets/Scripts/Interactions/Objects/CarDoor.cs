@@ -22,15 +22,21 @@ namespace Interactions.Objects
         [SerializeField] private VehicleInteractionRefs _vehicleInteractionRefs;
         public override void Interact(PlayerController player)
         {
-            PlayerStateManager.SetState(PlayerState.InVehicle);
-            _vehicleInteractionRefs.playerController.stopMovement = true;
-            _vehicleInteractionRefs.playerTransform.position = _vehicleInteractionRefs.VehicleSeatTransform.position;
-            _vehicleInteractionRefs.playerTransform.rotation = _vehicleInteractionRefs.VehicleSeatTransform.rotation;
-            // _vehicleInteractionRefs.camera[0].SetActive(false);
-            _vehicleInteractionRefs.playerCamera.SetActive(false);
-            _vehicleInteractionRefs.carCamera.SetActive(true);
-            _vehicleInteractionRefs.CharacterController.enabled = false;
-            _vehicleInteractionRefs.ezerealCarController.enabled = true;
+            ScreenTransition.Instance.StartTransition(() =>
+            {
+                PlayerStateManager.SetState(PlayerState.InVehicle);
+                _vehicleInteractionRefs.playerController.stopMovement = true;
+                _vehicleInteractionRefs.playerTransform.position = _vehicleInteractionRefs.VehicleSeatTransform.position;
+                _vehicleInteractionRefs.playerTransform.rotation = _vehicleInteractionRefs.VehicleSeatTransform.rotation;
+                // _vehicleInteractionRefs.camera[0].SetActive(false);
+                _vehicleInteractionRefs.playerCamera.SetActive(false);
+                _vehicleInteractionRefs.carCamera.SetActive(true);
+                _vehicleInteractionRefs.CharacterController.enabled = false;
+                _vehicleInteractionRefs.ezerealCarController.StartCar();
+
+                _vehicleInteractionRefs.ezerealCarController.enabled = true;
+            });
+           
         }
 
         public void Update()
