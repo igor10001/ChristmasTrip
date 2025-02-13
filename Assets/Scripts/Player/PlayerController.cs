@@ -36,8 +36,14 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         _playerInputManager = GetComponent<PlayerInputManager>();
         cameraTransform = Camera.main.transform;
-        _playerInputManager.OnInteractionAction += PlayerInputManagerOnInteractionAction;
+        _playerInputManager.OnInteractionActionPerformed += PlayerInputManagerOnInteractionActionPerformed;
+        _playerInputManager.OnInteractionActionCanceled += PlayerInputManagerOnOnInteractionActionCanceled;
+    }
 
+    private void PlayerInputManagerOnOnInteractionActionCanceled(object sender, EventArgs e)
+    {
+        if(selectedObject != null)
+            selectedObject.InteractCanceled(this);
     }
 
 
@@ -47,20 +53,20 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        _playerInputManager.OnInteractionAction -= PlayerInputManagerOnInteractionAction;
-
+        _playerInputManager.OnInteractionActionPerformed -= PlayerInputManagerOnInteractionActionPerformed;
+        _playerInputManager.OnInteractionActionCanceled -= PlayerInputManagerOnOnInteractionActionCanceled;
     }
     private void OnDestroy()
     {
-        _playerInputManager.OnInteractionAction -= PlayerInputManagerOnInteractionAction;
-
+        _playerInputManager.OnInteractionActionPerformed -= PlayerInputManagerOnInteractionActionPerformed;
+        _playerInputManager.OnInteractionActionCanceled -= PlayerInputManagerOnOnInteractionActionCanceled;
     }
 
-    private void PlayerInputManagerOnInteractionAction(object sender, EventArgs e)
+    private void PlayerInputManagerOnInteractionActionPerformed(object sender, EventArgs e)
     {
         if (selectedObject != null)
         {
-            selectedObject.Interact(this);
+            selectedObject.InteractPerformed(this);
         }
     }
 

@@ -20,7 +20,7 @@ namespace Interactions.Objects
     public class CarDoor : BaseObject
     {
         [SerializeField] private VehicleInteractionRefs _vehicleInteractionRefs;
-        public override void Interact(PlayerController player)
+        public override void InteractPerformed(PlayerController player)
         {
             ScreenTransition.Instance.StartTransition(() =>
             {
@@ -37,6 +37,12 @@ namespace Interactions.Objects
                 _vehicleInteractionRefs.ezerealCarController.enabled = true;
             });
            
+        }
+
+
+        public override void InteractCanceled(PlayerController player)
+        {
+            Debug.Log("Interact canceled");
         }
 
         public void Update()

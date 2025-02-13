@@ -59,9 +59,9 @@ namespace Ezereal
 
         [Header("Debug Info")]
         public bool stationary = true;
-        [SerializeField] float currentSpeed = 0f;
+         public float currentSpeed = 0f;
         [SerializeField] float currentAccelerationValue = 0f;
-        [SerializeField] float currentBrakeValue = 0f;
+        public float currentBrakeValue = 0f;
         [SerializeField] float currentHandbrakeValue = 0f;
         [SerializeField] float currentSteerAngle = 0f;
         [SerializeField] float targetSteerAngle = 0f;
@@ -207,6 +207,7 @@ namespace Ezereal
 
         void OnAccelerate(InputValue accelerationValue)
         {
+            
             currentAccelerationValue = accelerationValue.Get<float>();
             //Debug.Log("Acceleration: " + currentAccelerationValue.ToString());
         }
@@ -497,7 +498,7 @@ namespace Ezereal
             Debug.Log("current braking balue ==== " + currentBrakeValue);
             Debug.Log("current acceleration balue ==== " + currentAccelerationValue);
             Debug.Log("stationary state ==== " + stationary );
-            
+           
             Acceleration();
             if (stationary)
                 {
@@ -549,6 +550,8 @@ namespace Ezereal
             RearLeftWheelRPM = rearLeftWheelCollider.rpm;
             RearRightWheelRPM = rearRightWheelCollider.rpm;
         }
+
+       
 
         private void UpdateWheel(WheelCollider col, Transform mesh)
         {

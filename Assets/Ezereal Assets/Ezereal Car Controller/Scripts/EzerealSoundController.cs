@@ -1,3 +1,5 @@
+using System.Collections;
+using DefaultNamespace.Sound;
 using UnityEngine;
 
 namespace Ezereal
@@ -9,13 +11,15 @@ namespace Ezereal
         [SerializeField] EzerealCarController ezerealCarController;
         [SerializeField] AudioSource tireAudio;
         [SerializeField] AudioSource engineAudio;
+        [SerializeField] AudioSource reverseAudio;
+        private Coroutine reverseSoundCoroutine = null;
 
         [Header("Settings")]
         public float maxVolume = 0.5f; // Maximum volume for high speeds
 
         [Header("Debug")]
         [SerializeField] bool alreadyPlaying;
-
+        private bool reverseSoundPlayed = false;
         void Start()
         {
             if (useSounds)
@@ -44,24 +48,94 @@ namespace Ezereal
             {
                 if (engineAudio != null)
                 {
-                    engineAudio.Play();
+                    SoundManager.Instance.PlayEngineStartSound(transform.position, () =>
+                    {
+                        engineAudio.Play();
+                    } );
+                   
                 }
             }
         }
 
+
+
+        public void ReverseSoundOn()
+        {
+            if (!reverseSoundPlayed) // Play sound only once
+            {
+                reverseAudio.Play();
+                reverseSoundPlayed = true; // Set flag to true to prevent further plays
+            }
+        }
+
+        public void ReverseSoundOff()
+        {
+            // Stop reverse sound only once when reversing stops
+            if (reverseAudio.isPlaying)
+            {
+                reverseAudio.Stop();
+                reverseSoundPlayed = false; // Reset flag when reversing stops
+            }
+        }
+
+        private void ReverseSound()
+        {
+            if (ezerealCarController.currentGear == AutomaticGears.Reverse && ezerealCarController.currentBrakeValue == 1)
+            {
+                StartReverseSoundDelay(); // Start delay for reverse sound
+            }
+            else
+            {
+                // Stop the sound only if it's already playing
+                if (reverseAudio.isPlaying)
+                {
+                    ReverseSoundOff();
+                }
+            }
+        }
+
+        private IEnumerator ReverseSoundDelay()
+        {
+            yield return new WaitForSeconds(0.05f); // Wait for a short time
+
+            if (ezerealCarController.currentGear == AutomaticGears.Reverse && ezerealCarController.currentBrakeValue == 1)
+            {
+                if (!reverseAudio.isPlaying) // Check if it's not already playing
+                {
+                    ReverseSoundOn(); // Play reverse sound
+                }
+            }
+        }
         public void TurnOffEngineSound()
         {
             useSounds = false;
             
                 if (engineAudio != null)
                 {
-                    engineAudio.Stop();
+                    SoundManager.Instance.PlayHandBrakeSound(transform.position, () =>
+                    {
+                        engineAudio.Stop();
+
+                    });
                 }
             
         }
+        private void StartReverseSoundDelay()
+        {
+            if (reverseSoundCoroutine != null) // If coroutine is already running, stop it
+            {
+                StopCoroutine(reverseSoundCoroutine);
+            }
+            reverseSoundCoroutine = StartCoroutine(ReverseSoundDelay());
+        }
+
+      
+
 
         void Update()
         {
+            ReverseSound();
+            
             if (useSounds)
             {
 #if UNITY_6000_0_OR_NEWER

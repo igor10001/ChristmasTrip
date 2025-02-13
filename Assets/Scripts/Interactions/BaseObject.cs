@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class BaseObject : MonoBehaviour
 {
-    public virtual void Interact(PlayerController player)
+    public virtual void InteractPerformed(PlayerController player)
     {
         
     }
+    
+    
+    public virtual void InteractCanceled(PlayerController player)
+    {
+        
+    }
+    
+    
 }

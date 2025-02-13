@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DefaultNamespace.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -104,8 +105,16 @@ namespace DefaultNamespace.Sound
             PlaySound(clipToPlay, position, volumeMultiplier);
         }*/
 
-        public void PlaySound(AudioClip audioClip, Vector3 position, AudioMixerGroup mixerGroup,
-            float volumeMultiplier = 1f)
+        public void PlayEngineStartSound(  Vector3 position, Action onComplete)
+        {
+            PlaySound(audioClipRefsSO.engineStart, position, mixerGroupSfx, volume, onComplete);
+        }
+
+        public void PlayHandBrakeSound(Vector3 position, Action onComplete)
+        {
+            PlaySound(audioClipRefsSO.handBrake, position, mixerGroupSfx, volume, onComplete);
+        }
+        public void PlaySound(AudioClip audioClip, Vector3 position, AudioMixerGroup mixerGroup, float volumeMultiplier = 1f, Action onComplete = null)
         {
             GameObject soundGameObject = new GameObject("Sound");
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
@@ -113,14 +122,19 @@ namespace DefaultNamespace.Sound
             audioSource.outputAudioMixerGroup = mixerGroup;
             audioSource.volume = volumeMultiplier * volume;
             audioSource.Play();
-            Destroy(soundGameObject, audioClip.length);
+
+            StartCoroutine(DestroyAfterPlay(audioSource, onComplete));
         }
 
-        /*public void PlayFootstepsSound(Vector3 position, float volume) {
-            PlaySound(audioClipRefsSO.footstep, position, volume);
+        private IEnumerator DestroyAfterPlay(AudioSource audioSource, Action onComplete)
+        {
+            yield return new WaitForSeconds(audioSource.clip.length);
+            onComplete?.Invoke(); // Trigger callback when sound finishes
+            Destroy(audioSource.gameObject);
         }
 
-        public void PlayCountdownSound() {
+
+        /*public void PlayCountdownSound() {
             PlaySound(audioClipRefsSO.warning, Vector3.zero);
         }
 

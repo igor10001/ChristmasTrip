@@ -36,6 +36,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Attach to Unity Editor.Attach to Unity Editor &amp; Play.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
@@ -54,7 +55,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Unity Editor\2023.2.20f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Christmas trip\ChristmasTrip&quot; -debugCodeOptimization" />
@@ -81,10 +82,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6844">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6844" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,7 +117,8 @@
       <workItem from="1739296207199" duration="21980000" />
       <workItem from="1739345971911" duration="1765000" />
       <workItem from="1739352339888" duration="382000" />
-      <workItem from="1739401292918" duration="2228000" />
+      <workItem from="1739401292918" duration="12398000" />
+      <workItem from="1739439674855" duration="1406000" />
     </task>
     <servers />
   </component>
@@ -137,69 +139,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealCarController.cs</url>
-          <line>231</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealCarController.cs" containingFunctionPresentation="Method 'Acceleration'">
-            <startOffsets>
-              <option value="7969" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8051" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealCarController.cs</url>
-          <line>193</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealCarController.cs" containingFunctionPresentation="Method 'StopCar'">
-            <startOffsets>
-              <option value="6511" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6555" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealCarController.cs</url>
-          <line>175</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealCarController.cs" containingFunctionPresentation="Method 'StartCar'">
-            <startOffsets>
-              <option value="6034" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6077" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealSoundController.cs</url>
-          <line>57</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealSoundController.cs" containingFunctionPresentation="Method 'TurnOffEngineSound'">
+          <line>65</line>
+          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealSoundController.cs" containingFunctionPresentation="Method 'ReverseSoundOn'">
             <startOffsets>
-              <option value="1652" />
+              <option value="1989" />
             </startOffsets>
             <endOffsets>
-              <option value="1671" />
+              <option value="2009" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ezereal Assets/Ezereal Car Controller/Scripts/EzerealSoundController.cs</url>
-          <line>53</line>
-          <properties documentPath="D:\Christmas trip\ChristmasTrip\Assets\Ezereal Assets\Ezereal Car Controller\Scripts\EzerealSoundController.cs" containingFunctionPresentation="Method 'TurnOffEngineSound'">
-            <startOffsets>
-              <option value="1541" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1559" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

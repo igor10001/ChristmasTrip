@@ -9,7 +9,8 @@ using UnityEngine;
     
     private GamePlayerInput _playerInput;
 
-    public event EventHandler OnInteractionAction;
+    public event EventHandler OnInteractionActionPerformed;
+    public event EventHandler OnInteractionActionCanceled;
     public event EventHandler OnVechicleExitAction;
     private void Awake()
     {
@@ -17,15 +18,20 @@ using UnityEngine;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _playerInput.Player.Interact.performed += InteractOnperformed;
+        _playerInput.Player.Interact.canceled += InteractOncanceled;
         _playerInput.Vehicle.ExitVehicle.performed += ExitOnperformed;
 
     }
 
-  
+    private void InteractOncanceled(InputAction.CallbackContext obj)
+    {
+        OnInteractionActionCanceled?.Invoke(this, EventArgs.Empty);
+    }
+
 
     private void InteractOnperformed(InputAction.CallbackContext obj)
     {
-        OnInteractionAction?.Invoke(this, EventArgs.Empty);
+        OnInteractionActionPerformed?.Invoke(this, EventArgs.Empty);
     } 
     private void ExitOnperformed(InputAction.CallbackContext obj)
     {
