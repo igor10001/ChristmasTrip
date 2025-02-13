@@ -7,19 +7,18 @@ namespace DefaultNamespace.Sound
 {
     public class SoundManager : MonoBehaviour
     {
-        /*private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
+        private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
 
 
         public static SoundManager Instance { get; private set; }
-        [SerializeField] private AudioMixerGroup mixerGroupShoot;
-        [SerializeField] private AudioMixerGroup mixerGroupJump;
-        [SerializeField] private AudioMixerGroup mixerGroupExplosion;
+        [SerializeField] private AudioMixerGroup mixerGroupSfx;
+        [SerializeField] private AudioMixerGroup mixerGroupMusic;
 
 
         [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
 
-        private float volume = 6f;
+        public  float volume = 6f;
 
 
         private void Awake()
@@ -32,38 +31,38 @@ namespace DefaultNamespace.Sound
 
         private void Start()
         {
-            PlayerShooter.Instance.OnPlayerShoot += OnPLayerShoot;
-            PlayerController.Instance.OnPlayerJump += OnPlayerJump;
-            GameEvents.OnEnemyDie += OnEnemyDie;
+           // PlayerShooter.Instance.OnPlayerShoot += OnPLayerShoot;
+           // PlayerController.Instance.OnPlayerJump += OnPlayerJump;
+           // GameEvents.OnEnemyDie += OnEnemyDie;
             /*DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
             DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;
             CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;
             Player.Instance.OnPickedSomething += Player_OnPickedSomething;
             BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
-            TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;#1#
+            TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;*/
         }
 
         private void OnDisable()
         {
-            PlayerController.Instance.OnPlayerJump -= OnPlayerJump;
-            PlayerShooter.Instance.OnPlayerShoot -= OnPLayerShoot;
-            GameEvents.OnEnemyDie -= OnEnemyDie;
+           // PlayerController.Instance.OnPlayerJump -= OnPlayerJump;
+          //  PlayerShooter.Instance.OnPlayerShoot -= OnPLayerShoot;
+           // GameEvents.OnEnemyDie -= OnEnemyDie;
         }
 
         private void OnEnemyDie(Vector3 obj)
         {
-            PlaySound(audioClipRefsSO.explosion, obj, mixerGroupExplosion);
+          //  PlaySound(audioClipRefsSO.explosion, obj, mixerGroupExplosion);
         }
 
         private void OnPlayerJump(object sender, EventArgs e)
         {
-            PlaySound(audioClipRefsSO.playerJump, PlayerController.Instance.transform.position, mixerGroupJump);
+           // PlaySound(audioClipRefsSO.playerJump, PlayerController.Instance.transform.position, mixerGroupJump);
         }
 
 
         private void OnPLayerShoot(object sender, EventArgs e)
         {
-            PlaySound(audioClipRefsSO.shoot, PlayerController.Instance.transform.position, mixerGroupShoot);
+           // PlaySound(audioClipRefsSO.shoot, PlayerController.Instance.transform.position, mixerGroupShoot);
         }
 
         /*
@@ -95,7 +94,7 @@ namespace DefaultNamespace.Sound
             DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
             PlaySound(audioClipRefsSO.deliverySuccess, deliveryCounter.transform.position);
         }
-        #1#
+        */
 
         /*public void PlaySound(AudioClip[] audioClipArray, Vector3 position, float volumeMultiplier = 1f)
         {
@@ -103,7 +102,7 @@ namespace DefaultNamespace.Sound
 
             AudioClip clipToPlay = audioClipArray[Random.Range(0, audioClipArray.Length)];
             PlaySound(clipToPlay, position, volumeMultiplier);
-        }#1#
+        }*/
 
         public void PlaySound(AudioClip audioClip, Vector3 position, AudioMixerGroup mixerGroup,
             float volumeMultiplier = 1f)
@@ -127,7 +126,7 @@ namespace DefaultNamespace.Sound
 
         public void PlayWarningSound(Vector3 position) {
             PlaySound(audioClipRefsSO.warning, position);
-        }#1#
+        }*/
 
         public void ChangeVolume()
         {
@@ -144,6 +143,6 @@ namespace DefaultNamespace.Sound
         public float GetVolume()
         {
             return volume;
-        }*/
+        }
     }
 }

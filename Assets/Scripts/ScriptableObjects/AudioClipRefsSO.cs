@@ -10,6 +10,9 @@ namespace DefaultNamespace.ScriptableObjects
         public AudioClip engineStart;
         public AudioClip[] interaction;
         public AudioClip handBrake;
-            
+        public AudioClip horn;
+        public AudioClip[] radio;
+
+
     }
 }
