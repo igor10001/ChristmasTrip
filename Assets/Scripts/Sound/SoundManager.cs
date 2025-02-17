@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using DefaultNamespace.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,17 +10,20 @@ namespace DefaultNamespace.Sound
     public class SoundManager : MonoBehaviour
     {
         private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
-
-
+        private GameObject currentRadioObject;
+        private int currentTrackIndex = 0;
+        private List<GameObject> radioObjects = new List<GameObject>();
         public static SoundManager Instance { get; private set; }
         [SerializeField] private AudioMixerGroup mixerGroupSfx;
         [SerializeField] private AudioMixerGroup mixerGroupMusic;
-
+        public bool isRadioPaused = false; 
 
         [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
 
         public  float volume = 6f;
+        
+        
 
 
         private void Awake()
@@ -104,7 +108,64 @@ namespace DefaultNamespace.Sound
             AudioClip clipToPlay = audioClipArray[Random.Range(0, audioClipArray.Length)];
             PlaySound(clipToPlay, position, volumeMultiplier);
         }*/
+        public void PlayRadio()
+        {
+            if (audioClipRefsSO.radio.Length == 0) return;
+            if (currentRadioObject != null) return; // Already playing
 
+            PlayNextRadioTrack();
+        }
+
+        private void PlayNextRadioTrack()
+        {
+            if (currentTrackIndex >= audioClipRefsSO.radio.Length) 
+                currentTrackIndex = 0; // Loop back to the start
+
+            AudioClip track = audioClipRefsSO.radio[currentTrackIndex];
+            currentRadioObject = new GameObject("RadioTrack");
+            AudioSource audioSource = currentRadioObject.AddComponent<AudioSource>();
+            audioSource.clip = track;
+            audioSource.outputAudioMixerGroup = mixerGroupMusic;
+            audioSource.volume = volume;
+            audioSource.Play();
+            radioObjects.Add(currentRadioObject);
+
+            StartCoroutine(DestroyAfterPlay(audioSource, () => {
+                radioObjects.Remove(currentRadioObject);
+                Destroy(currentRadioObject);
+                currentRadioObject = null;
+                currentTrackIndex++;
+                PlayNextRadioTrack();
+            }));
+        }
+
+        public void StopRadio()
+        {
+            if (currentRadioObject != null)
+            {
+                Destroy(currentRadioObject);
+                currentRadioObject = null;
+                radioObjects.Clear();
+            }
+        }
+
+        public void PauseRadio()
+        {
+            if (currentRadioObject != null)
+            {
+                currentRadioObject.GetComponent<AudioSource>().Pause();
+                isRadioPaused = true;
+            }
+        }
+
+        public void ResumeRadio()
+        {
+            if (currentRadioObject != null && isRadioPaused)
+            {
+                currentRadioObject.GetComponent<AudioSource>().Play();
+                isRadioPaused = false;
+            }
+        }
         public void PlayEngineStartSound(  Vector3 position, Action onComplete)
         {
             PlaySound(audioClipRefsSO.engineStart, position, mixerGroupSfx, volume, onComplete);
@@ -113,6 +174,10 @@ namespace DefaultNamespace.Sound
         public void PlayHandBrakeSound(Vector3 position, Action onComplete)
         {
             PlaySound(audioClipRefsSO.handBrake, position, mixerGroupSfx, volume, onComplete);
+        }
+        public void PlayHandHornSound(Vector3 position, Action onComplete)
+        {
+            PlaySound(audioClipRefsSO.horn, position, mixerGroupSfx, volume, onComplete);
         }
         public void PlaySound(AudioClip audioClip, Vector3 position, AudioMixerGroup mixerGroup, float volumeMultiplier = 1f, Action onComplete = null)
         {
@@ -142,6 +207,7 @@ namespace DefaultNamespace.Sound
             PlaySound(audioClipRefsSO.warning, position);
         }*/
 
+        
         public void ChangeVolume()
         {
             volume += .1f;

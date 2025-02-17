@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (baseObject != selectedObject)
                     {
-                        SetSelectedCounter(baseObject);
+                        SetSelectedObject(baseObject);
                         Debug.Log("Selected");
                     }
                 }
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            SetSelectedCounter(null);
+            SetSelectedObject(null);
         }
     }
 
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
-    private void SetSelectedCounter(BaseObject selectedObject)
+    private void SetSelectedObject(BaseObject selectedObject)
     {
         this.selectedObject = selectedObject;
 

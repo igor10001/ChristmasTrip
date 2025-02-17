@@ -17,4 +17,10 @@ MonoBehaviour:
   interaction: []
   handBrake: {fileID: 8300000, guid: 7f9b40f3ba39b5541ac2f9084d04a5f2, type: 3}
   horn: {fileID: 0}
-  radio: []
+  radio:
+  - {fileID: 8300000, guid: ad117e85fc822bd4ba7427c036bf4a3f, type: 3}
+  - {fileID: 8300000, guid: 2b9aa9282493c88418037233fedb40e7, type: 3}
+  - {fileID: 8300000, guid: 9f27fd6fdda2f3642a300df337149b4c, type: 3}
+  - {fileID: 8300000, guid: 764483e5ee3df6a4ca3fb3e00170e681, type: 3}
+  - {fileID: 8300000, guid: 2de19409cfa51e54e9f6da28c9c359d8, type: 3}
+  - {fileID: 8300000, guid: b993ad2c2bd54714eb60f89c5d0716a4, type: 3}
